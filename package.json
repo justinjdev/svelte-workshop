@@ -37,6 +37,9 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "^5.13.0",
-		"prisma": "^5.13.0"
+		"@types/node": "^20.12.7",
+		"fs": "0.0.1-security",
+		"prisma": "^5.13.0",
+		"sqlite3": "^5.1.7"
 	}
 }

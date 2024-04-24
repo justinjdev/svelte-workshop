@@ -2,6 +2,10 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
+## Note
+
+The data in the `db/` folder is sourced from the excellent [Erghast API](http://ergast.com/mrd/).
+
 ## TODO
 
 [] ergast  

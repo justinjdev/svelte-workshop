@@ -5,9 +5,9 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 ## TODO
 
 [] ergast  
-[] react component usage
-[] events
-[] reactive state
+[] react component usage  
+[] events  
+[] reactive state  
 [] localstorage
 
 ## Creating a project

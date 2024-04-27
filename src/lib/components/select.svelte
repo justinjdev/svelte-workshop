@@ -1,36 +1,26 @@
 <script lang="ts" generics="T">
-	import type { Season } from '$lib/server/db/types';
+	import { createEventDispatcher } from 'svelte';
 
 	// props
 	// generics are fun, aren't they?
 	export let options: { value: T; text?: string }[];
+	export let selectedValue: T;
 
-	// state
-	let selectedValue: T;
-	let selectedSeason: Season;
-
-	// reactive statement
-	$: console.log(selectedValue);
-
-	const loadSeason = async () => {
-		selectedSeason = await fetch(`/api?year=${selectedValue}`)
-			.then((res) => res.json())
-			.then((data) => {
-				return data;
-			});
-	};
+	// custom event firing
+	// const dispatch = createEventDispatcher();
+	// function onChange() {
+	// 	dispatch('change');
+	// }
 </script>
 
-<select class="selector" bind:value={selectedValue} on:change={() => loadSeason()}>
+<!-- event 'bubbling' -->
+<select class="selector" bind:value={selectedValue} on:change>
 	<!-- looping -->
 	{#each options as option}
-		<option value={option.value}>{option.text ? option.text : option.value}</option>
+		<option selected={selectedValue === option.value} value={option.value}
+			>{option.text ? option.text : option.value}</option
+		>
 	{/each}
-
-	<!-- conditional rendering -->
-	{#if selectedSeason}
-		<p>{selectedSeason}</p>
-	{/if}
 </select>
 
 <style>

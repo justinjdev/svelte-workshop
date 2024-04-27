@@ -3,6 +3,7 @@ import type { PageServerLoad } from './$types';
 
 export const load = (async () => {
 	return {
-		drivers: db.getTenDrivers()
+		drivers: db.getTenDrivers(),
+		options: db.getSeasons()
 	};
 }) satisfies PageServerLoad;

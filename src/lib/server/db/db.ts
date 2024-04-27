@@ -1,5 +1,5 @@
 import Database from 'better-sqlite3';
-import type { Driver } from './types';
+import type { Driver, Season } from './types';
 import { DATABASE_PATH } from '$env/static/private';
 
 class TheDatabase {
@@ -14,6 +14,18 @@ class TheDatabase {
 		const stmt = this.db.prepare('SELECT * FROM drivers LIMIT 10;');
 		const rows = stmt.all();
 		return rows as Driver[];
+	}
+
+	getSeasons(): number[] {
+		const stmt = this.db.prepare('SELECT year FROM seasons;');
+		const rows = stmt.all();
+		return rows.map((season) => (season as Season).year);
+	}
+
+	getSeasonByYear(year: string): Season {
+		const stmt = this.db.prepare('SELECT * FROM seasons WHERE year = ?;');
+		const row = stmt.get(year);
+		return row as Season;
 	}
 }
 

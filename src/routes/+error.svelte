@@ -18,10 +18,12 @@
 	<div class="error-wrapper" transition:fade={{ duration: 500 }}>
 		<section class="content-wrapper">
 			<h1>Whoops!</h1>
+			<h3>{code} | {message}</h3>
 			{#if code < 500}
-				<h3>{code} | {message}</h3>
+				<img src="/images/no.gif" alt="You can't do that" />
+			{:else}
+				<img src="/images/crash.gif" alt="Server error" />
 			{/if}
-			<img src="/images/no.gif" alt="You can't do that" />
 		</section>
 	</div>
 {/if}

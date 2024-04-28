@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Drivers from '$lib/components/drivers.svelte';
-	import Select from '$lib/components/select.svelte';
+	import Drivers from '$lib/components/Drivers.svelte';
+	import Select from '$lib/components/Select.svelte';
 	import type { Season } from '$lib/server/db/types';
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
@@ -26,7 +26,6 @@
 </script>
 
 <h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <Drivers drivers={data.drivers} />
 <Select

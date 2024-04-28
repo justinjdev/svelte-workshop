@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Driver } from '$lib/server/db/types';
-	import DriverCard from './driverCard.svelte';
+	import DriverCard from './DriverCard.svelte';
 
 	export let drivers: Driver[];
 </script>

@@ -38,8 +38,9 @@
 	"type": "module",
 	"dependencies": {
 		"@types/node": "^20.12.7",
-		"better-sqlite3": "^9.5.0",
+		"better-sqlite3": "^9.6.0",
 		"fs": "0.0.1-security",
-		"sqlite3": "^5.1.7"
+		"sqlite3": "^5.1.7",
+		"svelte-awesome": "^3.3.1"
 	}
 }

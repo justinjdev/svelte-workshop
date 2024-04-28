@@ -26,35 +26,12 @@
 </svelte:head>
 
 {#if ready}
-	<div class="page-wrapper" transition:fade={{ duration: 500 }}>
+	<div class="page-wrapper" transition:fade={{ duration: 1000 }}>
 		<AnimatedBg />
 
-		<div class="grid">
-			<section class="content-wrapper">
-				<div class="left" in:fly={{ x: -100, duration: 500 }}>
-					<h1>Justin Jones</h1>
-					<h2>Software Engineer | Tech Leader | Serial Hobbyist</h2>
-				</div>
-				<div class="right" in:fly={{ x: 100, duration: 500 }}>
-					<ul>
-						<li class="nav">
-							<a href="https://www.linkedin.com/in/justin-jones-65270421/"
-								><Icon data={linkedinSquare} style="margin-right:5px" /> LinkedIn
-							</a>
-						</li>
-						<li class="nav">
-							<a href="https://github.com/NachoChef"
-								><Icon data={githubSquare} style="margin-right:5px" /> GitHub</a
-							>
-						</li>
-						<li class="nav">
-							<a href="https://www.instagram.com/cerealprogrammer/">
-								<Icon data={instagram} style="margin-right:5px" /> Instagram
-							</a>
-						</li>
-					</ul>
-				</div>
-			</section>
+		<div class="hero-wrapper">
+			<h1 transition:fly={{ x: -100, duration: 500 }}>Sveltekit Workshop</h1>
+			<h2 transition:fly={{ x: 100, duration: 500 }}>Tech Week 2024</h2>
 		</div>
 	</div>
 {/if}
@@ -62,5 +39,14 @@
 <style>
 	:global(body) {
 		background-color: #002325;
+	}
+
+	.hero-wrapper {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		height: 80vh;
+		justify-content: center;
+		align-items: center;
 	}
 </style>

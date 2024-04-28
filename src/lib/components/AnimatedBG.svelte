@@ -45,21 +45,23 @@
 		margin: 0 calc(100vw / 26);
 		animation: animate 15s linear infinite;
 		animation-duration: calc(300s / var(--f));
+		opacity: 0;
 	}
 
 	@keyframes animate {
 		0% {
 			/* transform: translate(0vh, 0vw); */
 			transform: translateY(100vh);
-			opacity: 0;
 		}
 		50% {
 			opacity: 100;
 		}
+		80% {
+			opacity: 0;
+		}
 		100% {
 			/* transform: translateY(100vh, 100vw); */
 			transform: translateY(-10vh);
-			opacity: 0;
 		}
 	}
 </style>

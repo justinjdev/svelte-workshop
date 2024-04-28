@@ -28,7 +28,7 @@
 			<h2 transition:fly={{ y: 100, duration: 500 }}>Tech Week 2024</h2>
 
 			<button class="start">
-				<a href="/goodstuff">Let's Go! <Icon data={rocket} /> </a>
+				<a href="/prepare">Let's Go! <Icon data={rocket} /> </a>
 			</button>
 		</div>
 	</div>

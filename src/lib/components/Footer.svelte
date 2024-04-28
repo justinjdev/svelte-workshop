@@ -7,7 +7,7 @@
 <footer>
 	<ul class="social-media-list">
 		<li>
-			<a href="https://github.com/justinjdev" aria-label="link to github"
+			<a href="https://github.com/justinjdev/formulasvelte" aria-label="link to github"
 				><Icon data={githubSquare} /></a
 			>
 		</li>

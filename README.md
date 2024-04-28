@@ -15,21 +15,9 @@ I have modified these instructions to use `pnpm`, however `npm` works exactly th
 [] reactive state  
 [] localstorage
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-pnpm create svelte@latest
-
-# create a new project in my-app
-pnpm create svelte@latest my-app
-```
-
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `ppnpm install` or `yarn`), start a development server:
+Once you've downloaded the project and installed dependencies with `pnpm install` (or `npm install` or `yarn`), start a development server:
 
 ```bash
 pnpm run dev

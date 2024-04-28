@@ -2,13 +2,14 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-## Note
+## Notes
 
-The data in the `db/` folder is sourced from the excellent [Erghast API](http://ergast.com/mrd/).
+The data in the `db/` folder is sourced from the excellent [Ergast API](http://ergast.com/mrd/).
+
+I have modified these instructions to use `pnpm`, however `npm` works exactly the same.
 
 ## TODO
 
-[] ergast  
 [] react component usage  
 [] events  
 [] reactive state  
@@ -28,7 +29,7 @@ pnpm create svelte@latest my-app
 
 ## Developing
 
-Once you've created a project and installed dependencies with `pnpm install` (or `ppnpm install` or `yarn`), start a development server:
+Once you've created a project and installed dependencies with `npm install` (or `ppnpm install` or `yarn`), start a development server:
 
 ```bash
 pnpm run dev

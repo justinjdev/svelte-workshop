@@ -10,23 +10,8 @@
 <footer>
 	<ul class="social-media-list">
 		<li>
-			<a href="https://www.linkedin.com/in/justin-jones-65270421/" aria-label="link to linkedin"
-				><Icon data={linkedinSquare} /></a
-			>
-		</li>
-		<li>
 			<a href="https://github.com/justinjdev" aria-label="link to github"
 				><Icon data={githubSquare} /></a
-			>
-		</li>
-		<li>
-			<a href="https://www.instagram.com/cerealprogrammer/" aria-label="link to instagram"
-				><Icon data={instagram} /></a
-			>
-		</li>
-		<li>
-			<a href="https://500px.com/p/hock3ydud3?view=photos" aria-label="link to 500px"
-				><Icon data={fa500px} /></a
 			>
 		</li>
 	</ul>
@@ -49,7 +34,7 @@
 	}
 
 	.social-media-list li a {
-		color: #333;
+		color: #fff;
 		font-size: 20px;
 		text-decoration: none;
 		transition: color 0.2s ease-in-out;
@@ -68,11 +53,10 @@
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
-		width: 300px;
+		width: 400px;
 		height: 50px;
 		position: fixed;
-		margin-left: -100px;
-		left: 50%;
+		left: calc(50% - 200px);
 		bottom: 30px;
 	}
 

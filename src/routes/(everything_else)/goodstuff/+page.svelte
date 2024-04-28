@@ -3,7 +3,6 @@
 	import Select from '$lib/components/Select.svelte';
 	import type { Season } from '$lib/server/db/types';
 	import type { PageData } from './$types';
-	import { onMount } from 'svelte';
 
 	export let data: PageData;
 
@@ -20,8 +19,6 @@
 
 	// $: selectedValue && change();
 </script>
-
-<h1>Welcome to SvelteKit</h1>
 
 <Drivers drivers={data.drivers} />
 <Select

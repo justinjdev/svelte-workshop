@@ -1,8 +1,5 @@
 <script>
-	import linkedinSquare from 'svelte-awesome/icons/linkedinSquare';
 	import githubSquare from 'svelte-awesome/icons/githubSquare';
-	import fa500px from 'svelte-awesome/icons/fa500px';
-	import instagram from 'svelte-awesome/icons/instagram';
 
 	import Icon from 'svelte-awesome/components/Icon.svelte';
 </script>
@@ -34,14 +31,14 @@
 	}
 
 	.social-media-list li a {
-		color: #fff;
+		color: var(--zip-white);
 		font-size: 20px;
 		text-decoration: none;
 		transition: color 0.2s ease-in-out;
 	}
 
 	.social-media-list li a:hover {
-		color: #0077ff;
+		color: var(--zip-cream);
 	}
 
 	.footer-txt {

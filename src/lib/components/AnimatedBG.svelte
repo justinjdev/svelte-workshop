@@ -5,20 +5,24 @@
 
 <div class="bg-container" style="--opacity:{opacity}%;">
 	<div class="moving">
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:11;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:12;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:24;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:10;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:14;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:23;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:18;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:16;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:19;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--f:20;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:12;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:11;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:24;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:10;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:14;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:23;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:18;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:16;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:19;" />
+		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:20;" />
 	</div>
 </div>
 
 <style>
+	img {
+		max-height: 50px;
+	}
+
 	.bg-container {
 		position: fixed;
 		top: 0;
@@ -40,7 +44,7 @@
 		width: 30px;
 		margin: 0 calc(100vw / 26);
 		animation: animate 15s linear infinite;
-		animation-duration: calc(300s / var(--f));
+		animation-duration: calc(300s / var(--velocity));
 		opacity: 0;
 	}
 

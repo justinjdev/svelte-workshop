@@ -10,7 +10,7 @@ This workshop is intended to be as easy to approach as possible.
 
 In order to prepare, you should:
 
-0. Download an IDE, if desired. I include some recommended extensions for VS Code that I like to use with Svelte in the repo - when you open the project folder, it will prompt you to install them. If you don't feel like you deserve nice things, there's also always `nvim`.
+0. Download an IDE, if desired. I include some recommended extensions for VS Code that I like to use with Svelte in the repo - when you open the project folder, it will prompt you to install them. If you don't feel like you deserve nice things, there's also always `nvim`. If you like to choose chaos, there's also TextEdit.
 
 1. Install Nodejs (and `npm`, or `pnpm`, or `yarn`) (I am using `nvm v0.39.7`, `Nodejs v21.7.3`, and `npm v10.5.0` at the time of writing). Instructions for installing with `homebrew` on MacOS are below, for other OS (or if you have issues), [check here](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs):
 
@@ -26,6 +26,7 @@ In order to prepare, you should:
 2. Once your installation is verified (via `node -v`), let's attempt to install dependencies and run the project:
 
 ```bash
+        # omit the --open if you don't want it to open a browser window for you!
         $ pnpm install
         $ pnpm dev --open
         # or
@@ -35,3 +36,6 @@ In order to prepare, you should:
         $ yarn install
         $ yarn run dev --open
 ```
+
+3. If all goes well, you'll see something roughly like this:  
+   ![the CLI output when installation and run is successful](/assets/screenshots/successful_install.png)

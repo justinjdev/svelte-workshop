@@ -29,10 +29,10 @@
 {/if}
 
 <style>
-	:global(body) {
+	/* :global(body) {
 		background-color: #111;
 		color: lightcyan;
-	}
+	} */
 
 	.error-wrapper {
 		height: 100vh;

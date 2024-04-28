@@ -19,10 +19,6 @@
 </div>
 
 <style>
-	:global(body) {
-		margin: 0;
-	}
-
 	.bg-container {
 		position: fixed;
 		top: 0;

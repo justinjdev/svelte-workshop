@@ -20,9 +20,9 @@
 			<h1>Whoops!</h1>
 			<h3>{code} | {message}</h3>
 			{#if code < 500}
-				<img src="/images/no.gif" alt="You can't do that" />
+				<img src="/assets/no.gif" alt="You can't do that" />
 			{:else}
-				<img src="/images/crash.gif" alt="Server error" />
+				<img src="/assets/crash.gif" alt="Server error" />
 			{/if}
 		</section>
 	</div>

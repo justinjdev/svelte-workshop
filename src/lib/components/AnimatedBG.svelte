@@ -50,7 +50,6 @@
 
 	@keyframes animate {
 		0% {
-			/* transform: translate(0vh, 0vw); */
 			transform: translateY(100vh);
 		}
 		50% {
@@ -60,7 +59,6 @@
 			opacity: 0;
 		}
 		100% {
-			/* transform: translateY(100vh, 100vw); */
 			transform: translateY(-10vh);
 		}
 	}

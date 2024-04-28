@@ -10,4 +10,7 @@
 <Footer />
 
 <style>
+	:global(body) {
+		background: var(--zip-gravitas);
+	}
 </style>

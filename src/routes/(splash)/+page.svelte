@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { Icon } from 'svelte-awesome';
+	import { rocket } from 'svelte-awesome/icons';
 	import { fade, fly } from 'svelte/transition';
 
 	let ready = false;
@@ -26,7 +28,7 @@
 			<h2 transition:fly={{ y: 100, duration: 500 }}>Tech Week 2024</h2>
 
 			<button class="start">
-				<a href="/goodstuff">Let's Go!</a>
+				<a href="/goodstuff">Let's Go! <Icon data={rocket} /> </a>
 			</button>
 		</div>
 	</div>
@@ -60,5 +62,9 @@
 	a:hover {
 		color: var(--zip-white);
 		transition: ease-in-out 0.1s;
+	}
+
+	h1 {
+		font-size: 3em;
 	}
 </style>

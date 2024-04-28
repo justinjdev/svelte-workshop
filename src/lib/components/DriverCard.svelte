@@ -12,13 +12,11 @@
 <style>
 	.driver {
 		text-align: center;
-		margin: 1em 0;
-		padding: 1em;
-		border: 1px solid #ccc;
+		padding: 5px;
+		border: 2px solid var(--zip-gravitas);
 		border-radius: 4px;
 		width: 200px;
 		height: 250px;
-		padding: 10px;
-		background-color: #333;
+		background-color: var(--zip-coral);
 	}
 </style>

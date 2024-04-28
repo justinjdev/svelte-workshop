@@ -47,6 +47,7 @@
 	.footer-txt {
 		color: lightcyan;
 		opacity: 50%;
+		padding: 2px 0px;
 	}
 
 	footer {

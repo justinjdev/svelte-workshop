@@ -8,3 +8,10 @@
 <slot />
 
 <Footer />
+
+<style>
+	:global(body) {
+		background-color: #002325;
+		font-family: Aeonik, sans-serif;
+	}
+</style>

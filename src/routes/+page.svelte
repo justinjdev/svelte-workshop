@@ -30,17 +30,13 @@
 		<AnimatedBg />
 
 		<div class="hero-wrapper">
-			<h1 transition:fly={{ x: -100, duration: 500 }}>Sveltekit Workshop</h1>
-			<h2 transition:fly={{ x: 100, duration: 500 }}>Tech Week 2024</h2>
+			<h1 transition:fly={{ y: -100, duration: 500 }}>Sveltekit Workshop</h1>
+			<h2 transition:fly={{ y: 100, duration: 500 }}>Tech Week 2024</h2>
 		</div>
 	</div>
 {/if}
 
 <style>
-	:global(body) {
-		background-color: #002325;
-	}
-
 	.hero-wrapper {
 		text-align: center;
 		display: flex;
@@ -48,5 +44,22 @@
 		height: 80vh;
 		justify-content: center;
 		align-items: center;
+	}
+
+	/* custom font faces are the same */
+	@font-face {
+		font-family: 'Aeonik';
+		font-style: normal;
+		font-weight: 500;
+		src: url('/fonts/Aeonik-Regular.woff2') format('woff2');
+		src:
+			local('Aeonik'),
+			local('Aeonik-Regular'),
+			url('/fonts/aeoniktrial-regular-webfont.woff2') format('woff2');
+		src: url('/fonts/aeoniktrial-regular-webfont.woff') format('woff');
+		src:
+			local('Aeonik'),
+			local('Aeonik-Regular'),
+			url('/fonts/aeoniktrial-regular-webfont.woff') format('woff');
 	}
 </style>

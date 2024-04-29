@@ -1,8 +1,8 @@
+import { DATABASE_PATH } from '$env/static/private';
 import Database from 'better-sqlite3';
 import type { Driver, Season } from './types';
-import { DATABASE_PATH } from '$env/static/private';
 
-class TheDatabase {
+export default class SqliteDB {
 	private readonly db;
 
 	constructor() {
@@ -36,5 +36,3 @@ class TheDatabase {
 		return rows as Driver[];
 	}
 }
-
-export const db = new TheDatabase();

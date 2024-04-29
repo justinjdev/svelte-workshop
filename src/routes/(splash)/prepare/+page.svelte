@@ -28,6 +28,7 @@
 		</div>
 	</article>
 
+	<!-- nav -->
 	<FlowButton href="/tuts/{data.meta.next}" type={ButtonType.NEXT} />
 </div>
 

@@ -11,7 +11,12 @@ export const handle: Handle = async ({ event, resolve }) => {
 	// once we figure out of they're cool, see if they're able to access the cool stuff
 	if (event.url.pathname.startsWith('/cool') || event.url.pathname.startsWith('/examples')) {
 		if (!event.locals.isCool) {
-			throw redirect(303, '/challenge');
+			// handle proceeding after someone proves to be cool
+			let nextParam = '';
+			if (event.url.pathname !== '/challenge') {
+				nextParam = '?next=' + encodeURIComponent(event.request.url);
+			}
+			throw redirect(303, `/challenge${nextParam}`);
 		}
 	}
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -11,9 +12,10 @@
 		the <a href="/">home page</a>.
 	</p>
 	<p>Otherwise, you can try to solve the challenge below:</p>
-	<form action="/challenge">
+	<form method="POST" action="/challenge">
 		<label for="answer">What is your favorite color?</label>
-		<input type="text" id="answer" name="answer" />
+		<input type="text" id="color" name="color" />
+		<input type="hidden" name="next" value={$page.params.next} />
 		<button type="submit">Submit</button>
 	</form>
 </div>

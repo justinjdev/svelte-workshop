@@ -70,6 +70,6 @@
 
 	h1,
 	h2 {
-		text-shadow: 1px 1px 1px var(--zip-cream);
+		/* text-shadow: 1px 1px 1px var(--zip-cream); */
 	}
 </style>

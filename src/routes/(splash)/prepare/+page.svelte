@@ -29,7 +29,7 @@
 	</article>
 
 	<!-- nav -->
-	<FlowButton href="/tuts/{data.meta.next}" type={ButtonType.NEXT} />
+	<FlowButton href="/learn/{data.meta.next}" type={ButtonType.NEXT} />
 </div>
 
 <style>
@@ -50,19 +50,18 @@
 		text-wrap: wrap;
 	}
 
-	.prose > * > p {
-		text-indent: 20px;
-	}
-
 	.article-container > * > .title {
 		text-transform: capitalize;
 	}
 
-	hgroup {
-		text-align: center;
+	.title {
+		font-size: 2.5em;
+		color: var(--zip-green);
+		text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+		text-decoration: underline;
 	}
 
-	h1 + p {
-		margin-top: 2px;
+	hgroup {
+		text-align: center;
 	}
 </style>

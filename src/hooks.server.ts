@@ -9,7 +9,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.isCool = cookieChallenge(event.cookies);
 
 	// once we figure out of they're cool, see if they're able to access the cool stuff
-	if (event.url.pathname.startsWith('/cool') || event.url.pathname.startsWith('/examples')) {
+	if (event.url.pathname.startsWith('/learn') || event.url.pathname.startsWith('/examples')) {
 		if (!event.locals.isCool) {
 			// handle proceeding after someone proves to be cool
 			let nextParam = '';

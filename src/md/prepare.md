@@ -12,7 +12,7 @@ This workshop is intended to be as easy to approach as possible.
 
 In order to prepare, you should:
 
-1. Clone the repo! You can find it [here](https://www.github.com/justinjdev/formulasvelte). For this setup, we will just be using the `prepare` branch. Be sure to switch to the `main` branch before the workshop.
+1. Clone the repo! You can find it [here](https://www.github.com/justinjdev/formulasvelte). For this setup, we will just be using the `prepare` branch. Be sure to switch to the `workshop` branch before the workshop.
 
 ```bash
         $ git clone -b prepare git@github.com:justinjdev/formulasvelte.git
@@ -27,6 +27,7 @@ In order to prepare, you should:
         $ nvm install 21.7.3
         $ nvm use 21.7.3
         # optional installation for pnpm and/or yarn:
+        # seriously, try pnpm tho
         $ npm install -g pnpm
         $ npm install -g yarn
 ```
@@ -35,6 +36,7 @@ In order to prepare, you should:
 
 ```bash
         # omit the --open if you don't want it to open a browser window for you!
+        # have you tried pnpm yet?
         $ pnpm install
         $ pnpm dev --open
         # or

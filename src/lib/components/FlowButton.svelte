@@ -29,6 +29,8 @@
 		border: none;
 		font-size: large;
 		cursor: pointer;
+		position: absolute;
+		bottom: 57px;
 	}
 
 	.btn:hover {
@@ -37,14 +39,10 @@
 	}
 
 	.btn-right {
-		position: absolute;
 		right: 50px;
-		bottom: 50px;
 	}
 
 	.btn-left {
-		position: absolute;
-		right: 50px;
-		bottom: 50px;
+		left: 50px;
 	}
 </style>

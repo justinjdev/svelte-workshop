@@ -15,7 +15,11 @@
 		margin: auto;
 	}
 
-	:global(.prose > * > a) {
-		color: var(--zip-accent);
+	:global(.prose a) {
+		color: var(--zip-green);
+	}
+
+	:global(.prose a:hover) {
+		color: var(--zip-cream);
 	}
 </style>

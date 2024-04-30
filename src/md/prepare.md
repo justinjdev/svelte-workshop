@@ -12,9 +12,15 @@ This workshop is intended to be as easy to approach as possible.
 
 In order to prepare, you should:
 
-0. Download an IDE, if desired. I include some recommended extensions for VS Code that I like to use with Svelte in the repo - when you open the project folder, it will prompt you to install them. If you don't feel like you deserve nice things, there's also always `nvim`. If you like to choose chaos, there's also TextEdit.
+1. Clone the repo! You can find it [here](https://www.github.com/justinjdev/formulasvelte). For this setup, we will just be using the `prepare` branch. Be sure to switch to the `main` branch before the workshop.
 
-1. Install Nodejs (and `npm`, or `pnpm`, or `yarn`) (I am using `nvm v0.39.7`, `Nodejs v21.7.3`, and `npm v10.5.0` at the time of writing). Instructions for installing with `homebrew` on MacOS are below, for other OS (or if you have issues), [check here](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs):
+```bash
+        $ git clone -b prepare git@github.com:justinjdev/formulasvelte.git
+```
+
+2. Download an IDE, if desired. I include some recommended extensions for [VS Code](https://code.visualstudio.com/download) that I like to use with Svelte in the repo - when you open the project folder, it will prompt you to install them. If you don't feel like you deserve nice things, feel free to _not_ install those. You can also use `nvim` if you choose chaos.
+
+3. Install `Nodejs` (it comes with `npm`, but maybe you want `pnpm`, or `yarn` too). I am using `nvm v0.39.7`, `Nodejs v21.7.3`, and `pnpm v9.0.6` at the time of writing. Instructions for installing with `homebrew` on MacOS are below, for other OS (or if you have issues) [check here](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs):
 
 ```bash
         $ brew update && brew install nvm
@@ -25,7 +31,7 @@ In order to prepare, you should:
         $ npm install -g yarn
 ```
 
-2. Once your installation is verified (via `node -v`), let's attempt to install dependencies and run the project:
+4. Once your installation is verified (via `node -v`), let's attempt to install dependencies and run the project:
 
 ```bash
         # omit the --open if you don't want it to open a browser window for you!
@@ -39,5 +45,7 @@ In order to prepare, you should:
         $ yarn run dev --open
 ```
 
-3. If all goes well, you'll see something roughly like this:  
+5. If all goes well, you'll see something roughly like this:  
    ![the CLI output when installation and run is successful](/assets/screenshots/successful_install.png)
+
+6. Note: I have verified these instructions on `MacOS Definitely Some Version` as well as `Ubuntu 22.04.4 LTS`. If you still have issues, please feel free to reach out to me directly (@justinj) or ask in the [workshop slack channel](#)

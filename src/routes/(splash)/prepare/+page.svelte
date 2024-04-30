@@ -65,10 +65,4 @@
 	h1 + p {
 		margin-top: 2px;
 	}
-
-	.next {
-		position: absolute;
-		right: 50px;
-		bottom: 50px;
-	}
 </style>

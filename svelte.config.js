@@ -9,7 +9,7 @@ import shiki from 'shiki';
 
 /**
  * Configuring mdsvex with shiki and remark. This partially determines what the markdown pages
- * will look like
+ * will look like. It handles what codeblocks will look like too.align this element to the center of it's container
  */
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {

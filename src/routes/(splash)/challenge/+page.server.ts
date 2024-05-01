@@ -15,7 +15,7 @@ export const actions: Actions = {
 		if (color && checkColor(color.toString())) {
 			cookies.set('challenge', 'evergreen', { path: '/' });
 			if (next) {
-				throw redirect(302, next.toString());
+				throw redirect(302, decodeURIComponent(next.toString()));
 			} else {
 				throw redirect(302, '/learn');
 			}

@@ -11,10 +11,10 @@
 			the <a href="/">home page</a>.
 		</p>
 		<p>Otherwise, you can try to solve the challenge below:</p>
-		<form method="POST" action="/challenge">
+		<form method="POST" action="?/challenge">
 			<label for="answer">What is your favorite color?</label>
 			<input type="text" id="color" name="color" />
-			<input type="hidden" name="next" value={$page.params.next} />
+			<input type="hidden" id="next" name="next" value={$page.url.searchParams.get('next')} />
 			<button type="submit" class="btn"> Submit </button>
 		</form>
 	</div>

@@ -2,8 +2,7 @@
 title: Let's get ready!
 description: ...get ready?.
 published: true
-prev: prepare.md
-next: 01.md
+next: '01'
 ---
 
 ### Thank you for signing up for my Svelte/kit workshop!

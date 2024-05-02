@@ -1,16 +1,18 @@
-import { fail } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
 /**
  * Client-side loading
  */
 export const load = (async ({ params }) => {
-	const post = await import(`../../../../md/${params.slug}.md`).catch((_) => {
-		throw fail(404);
-	});
+	try {
+		const post = await import(`../../../../md/${params.slug}.md`);
 
-	return {
-		content: post.default,
-		meta: post.metadata
-	};
+		return {
+			content: post.default,
+			meta: post.metadata
+		};
+	} catch (e) {
+		throw error(404, `Could not find the requested page!`);
+	}
 }) satisfies PageLoad;

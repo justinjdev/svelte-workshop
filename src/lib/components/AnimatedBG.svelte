@@ -1,24 +1,24 @@
 <script lang="ts">
 	export let imgPath: string = './assets/chair_green.svg';
 	export let opacity: number = 5;
+	export let count: number = 10;
 	export let invert: boolean = false;
+	export let duration: number = 300;
 </script>
 
 <div
 	class="bg-container"
 	style="--opacity:{opacity}%; --start:{invert ? -10 : 110}vh; --end:{invert ? 110 : -10}vh;"
 >
-	<div class="moving">
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:12;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:11;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:24;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:10;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:14;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:23;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:18;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:16;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:19;" />
-		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:20;" />
+	<div class="moving" style="--count:{count}; --duration:{duration}s;">
+		{#each Array.from({ length: count }) as _}
+			<img
+				src={imgPath}
+				alt="bgimage"
+				class="bg-tile"
+				style="--velocity:{Math.random() * 15 + 5};"
+			/>
+		{/each}
 	</div>
 </div>
 
@@ -46,9 +46,9 @@
 	.moving > .bg-tile {
 		position: relative;
 		width: 30px;
-		margin: 0 calc(100vw / 26);
+		margin: 0 calc(100vw / (var(--count) * 2.6));
 		animation: animate 15s linear infinite;
-		animation-duration: calc(300s / var(--velocity));
+		animation-duration: calc(var(--duration) / var(--velocity));
 		opacity: 0;
 	}
 

@@ -3,7 +3,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<AnimatedBg />
+<AnimatedBg invert={true} />
 
 <slot />
 

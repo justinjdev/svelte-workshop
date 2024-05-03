@@ -1,9 +1,13 @@
 <script lang="ts">
 	export let imgPath: string = './assets/chair_green.svg';
 	export let opacity: number = 5;
+	export let invert: boolean = false;
 </script>
 
-<div class="bg-container" style="--opacity:{opacity}%;">
+<div
+	class="bg-container"
+	style="--opacity:{opacity}%; --start:{invert ? -10 : 110}vh; --end:{invert ? 110 : -10}vh;"
+>
 	<div class="moving">
 		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:12;" />
 		<img src={imgPath} alt="bgimage" class="bg-tile" style="--velocity:11;" />
@@ -50,7 +54,7 @@
 
 	@keyframes animate {
 		0% {
-			transform: translateY(100vh);
+			transform: translateY(var(--start));
 		}
 		50% {
 			opacity: 100;
@@ -59,7 +63,7 @@
 			opacity: 0;
 		}
 		100% {
-			transform: translateY(-10vh);
+			transform: translateY(var(--end));
 		}
 	}
 </style>

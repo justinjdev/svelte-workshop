@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let imgPath: string = './assets/chair_green.svg';
+	export let imgPath: string = '/assets/chair_green.svg';
 	export let opacity: number = 5;
 	export let count: number = 10;
 	export let invert: boolean = false;

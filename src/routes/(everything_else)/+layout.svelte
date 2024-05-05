@@ -2,7 +2,7 @@
 	import AnimatedBg from '$lib/components/AnimatedBG.svelte';
 </script>
 
-<AnimatedBg imgPath="/assets/f1.svg" opacity={100} />
+<AnimatedBg />
 
 <slot />
 

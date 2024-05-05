@@ -35,6 +35,18 @@
 		function drawText() {
 			ctx.fillStyle = 'rgba(0, 0, 0, .1)';
 			ctx.fillRect(0, 0, innerWidth, innerHeight);
+			requestAnimationFrame(() => {
+				ctx.fillStyle = '#0f0';
+				for (var i = 0; i < elements.length; i++) {
+					var text = letters[Math.floor(Math.random() * letters.length)];
+					ctx.fillText(text, i * fontSize, elements[i] * fontSize);
+					elements[i]++;
+					if (elements[i] * fontSize > innerHeight && Math.random() > 0.95) {
+						elements[i] = 0;
+					}
+				}
+				animate(ctx);
+			});
 			for (var i = 0; i < elements.length; i++) {
 				var text = letters[Math.floor(Math.random() * letters.length)];
 				ctx.fillStyle = '#0f0';
@@ -49,24 +61,27 @@
 		function drawImage() {
 			ctx.fillStyle = 'rgba(0, 0, 0, .1)';
 			ctx.fillRect(0, 0, innerWidth, innerHeight);
+			ctx.fillStyle = '#0f0';
 			for (var i = 0; i < elements.length; i++) {
-				ctx.fillStyle = '#0f0';
 				ctx.drawImage(
 					img,
 					i * fontSize,
 					elements[i] * fontSize,
 					fontSize - 2,
-					(fontSize - 2) * 1.6875
+					(fontSize - 2 * 1.6875) * 1.6875
 				);
 				elements[i]++;
 				if (elements[i] * fontSize > innerHeight && Math.random() > 0.95) {
 					elements[i] = 0;
 				}
 			}
+
+			requestAnimationFrame(drawImage);
 		}
 
-		setInterval(drawImage, 100);
+		// setInterval(drawImage, 100);
 		// draw(drawText);
+		requestAnimationFrame(drawImage);
 	}
 </script>
 

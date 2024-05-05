@@ -1,4 +1,4 @@
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from '../../learn/$types';
 
 export const load = (async ({ locals }) => {
 	return {

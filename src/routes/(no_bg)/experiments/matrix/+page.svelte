@@ -30,58 +30,33 @@
 		const columns = innerWidth / fontSize;
 		const elements = Array.from({ length: columns }, () => 1);
 
-		const letters = 'ZIPRECRUITER'.split('');
-
-		function drawText() {
-			ctx.fillStyle = 'rgba(0, 0, 0, .1)';
-			ctx.fillRect(0, 0, innerWidth, innerHeight);
-			requestAnimationFrame(() => {
-				ctx.fillStyle = '#0f0';
-				for (var i = 0; i < elements.length; i++) {
-					var text = letters[Math.floor(Math.random() * letters.length)];
-					ctx.fillText(text, i * fontSize, elements[i] * fontSize);
-					elements[i]++;
-					if (elements[i] * fontSize > innerHeight && Math.random() > 0.95) {
-						elements[i] = 0;
-					}
-				}
-				animate(ctx);
-			});
-			for (var i = 0; i < elements.length; i++) {
-				var text = letters[Math.floor(Math.random() * letters.length)];
-				ctx.fillStyle = '#0f0';
-				ctx.fillText(text, i * fontSize, elements[i] * fontSize);
-				elements[i]++;
-				if (elements[i] * fontSize > innerHeight && Math.random() > 0.95) {
-					elements[i] = 0;
-				}
-			}
-		}
-
 		function drawImage() {
 			ctx.fillStyle = 'rgba(0, 0, 0, .1)';
 			ctx.fillRect(0, 0, innerWidth, innerHeight);
 			ctx.fillStyle = '#0f0';
 			for (var i = 0; i < elements.length; i++) {
-				ctx.drawImage(
-					img,
-					i * fontSize,
-					elements[i] * fontSize,
-					fontSize - 2,
-					(fontSize - 2 * 1.6875) * 1.6875
-				);
+				ctx.drawImage(img, i * fontSize, elements[i] * fontSize, fontSize, fontSize * 1.6875);
 				elements[i]++;
 				if (elements[i] * fontSize > innerHeight && Math.random() > 0.95) {
 					elements[i] = 0;
 				}
 			}
 
-			requestAnimationFrame(drawImage);
+			// requestAnimationFrame(drawImage);
 		}
 
-		// setInterval(drawImage, 100);
-		// draw(drawText);
-		requestAnimationFrame(drawImage);
+		const fps = 40;
+		const interval = 1000 / fps;
+		function draw(lastDraw: number): void {
+			const now = performance.now();
+			if (now - lastDraw > interval) {
+				drawImage();
+				lastDraw = now;
+			}
+			requestAnimationFrame(() => draw(lastDraw));
+		}
+
+		requestAnimationFrame(() => draw(performance.now()));
 	}
 </script>
 

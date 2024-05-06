@@ -16,6 +16,8 @@ The tutorial pages are all markdown files compiled to html with [MDsveX](https:/
 
 Minimal HTML and CSS knowledge is needed to get a simple website like this up and running. You can learn everything you need via Google searches, Youtube and GitHub Copilot.
 
+More about `Svelte or React` can be found [here]().
+
 ## TODO
 
 [] react component usage  

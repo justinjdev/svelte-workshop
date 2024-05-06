@@ -14,9 +14,7 @@
 	 */
 	async function change() {
 		console.log('onchange');
-		selectedSeason = await fetch(`/api?year=${selectedValue}`)
-			.then((r) => r.json())
-			.then((data) => data);
+		selectedSeason = await fetch(`/api?year=${selectedValue}`).then((r) => r.json());
 	}
 
 	function options(): { value: number; text?: string | undefined }[] {
@@ -26,8 +24,6 @@
 	}
 
 	let selectedValue: number = 2021;
-
-	// $: selectedValue && change();
 </script>
 
 <Drivers drivers={data.drivers} />

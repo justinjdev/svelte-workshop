@@ -1,3 +1,7 @@
+/**
+ * DB types
+ */
+
 export type Circuit = {
 	circuitId: number;
 	circuitRef: string;

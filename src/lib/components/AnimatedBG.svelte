@@ -1,8 +1,17 @@
 <script lang="ts">
+	// the path to the image
 	export let imgPath: string = '/assets/chair_green.svg';
+
+	// the opacity of the moving background
 	export let opacity: number = 5;
+
+	// the number of tiles we want
 	export let count: number = 10;
+
+	// invert the direction of the animation (default is rising)
 	export let invert: boolean = false;
+
+	// the duration of the animation
 	export let duration: number = 300;
 </script>
 

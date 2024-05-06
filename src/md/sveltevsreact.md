@@ -20,4 +20,4 @@ next:
 
 ### Are any notable companies running Svelte in production?
 
-Yes! The NBA, some parts of Apple, Yelp, NYT, Ikea, Spotify...the list goes on with more detail [here](https://www.okupter.com/blog/companies-using-svelte);
+Yes! The NBA, Apple, Yelp, NYT, Ikea, and Spotify use Svelte for some portions of their website...the list goes on with more detail [here](https://www.okupter.com/blog/companies-using-svelte). Generally, Svelte is a good option where speed is desired - it also excels at SEO due to the compiled nature.

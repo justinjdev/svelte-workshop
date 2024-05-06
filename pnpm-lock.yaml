@@ -38,6 +38,9 @@ importers:
       svelte-awesome:
         specifier: ^3.3.1
         version: 3.3.1(svelte@4.2.15)
+      svelte-canvas:
+        specifier: ^1.2.0
+        version: 1.2.0
       svelte-persisted-store:
         specifier: ^0.9.2
         version: 0.9.2(svelte@4.2.15)
@@ -687,6 +690,9 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
+  canvas-size@1.2.6:
+    resolution: {integrity: sha512-x2iVHOrZ5x9V0Hwx6kBz+Yxf/VCAII+jrD6WLjJbytJLozHq/oDJjEva432Os0eHxWMFR0vYlLJwTr6QxyxQqw==}
+
   chai@4.4.1:
     resolution: {integrity: sha512-13sOfMv2+DWduEU+/xbun3LScLoqN17nBeTLUsmDfKdoiC1fr0n9PU4guu4AhRcOVFk/sW8LyZWHuhWtQZiF+g==}
     engines: {node: '>=4'}
@@ -1039,6 +1045,9 @@ packages:
 
   hast-util-whitespace@2.0.1:
     resolution: {integrity: sha512-nAxA0v8+vXSBDt3AnRUNjyRIQ0rD+ntpbAp4LnPkumc5M9yUbSMa4XDU9Q6etY4f1Wp4bNgvc1yjiZtsTTrSng==}
+
+  hit-canvas@0.2.0:
+    resolution: {integrity: sha512-sHOot00xR+k58jprp6G9/VH0W0cRRj1JUSroaDF77qIJ8EhaVkvWxvFv8JdVfQ28dcSlPF60DlnDAE0gBjuOdg==}
 
   http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
@@ -1728,6 +1737,9 @@ packages:
     resolution: {integrity: sha512-nC2KXPs/MQF79vnQEj7RZFkWKdocNfN64Zh/kAWTDS4gFNdCrp7q8dwN3PIxe/mqiaDIUc7x4iv2CtOnVPItcQ==}
     peerDependencies:
       svelte: ^3.43.1 || ^4.0.0
+
+  svelte-canvas@1.2.0:
+    resolution: {integrity: sha512-Xp7NH9EMkO/cuAH4M2IdZK/jzrh8HKLcBHSO7Hs2Nnc2IBGXDyhE8sRfG49PldyhmgPti5DTnR7OTZ0Dv9p52A==}
 
   svelte-check@3.7.0:
     resolution: {integrity: sha512-Va6sGL4Vy4znn0K+vaatk98zoBvG2aDee4y3r5X4S80z8DXfbACHvdLlyXa4C4c5tQzK9H0Uq2pbd20wH3ucjQ==}
@@ -2608,6 +2620,8 @@ snapshots:
 
   callsites@3.1.0: {}
 
+  canvas-size@1.2.6: {}
+
   chai@4.4.1:
     dependencies:
       assertion-error: 1.1.0
@@ -3023,6 +3037,8 @@ snapshots:
       '@types/hast': 2.3.10
 
   hast-util-whitespace@2.0.1: {}
+
+  hit-canvas@0.2.0: {}
 
   http-cache-semantics@4.1.1:
     optional: true
@@ -3775,6 +3791,12 @@ snapshots:
 
   svelte-awesome@3.3.1(svelte@4.2.15):
     dependencies:
+      svelte: 4.2.15
+
+  svelte-canvas@1.2.0:
+    dependencies:
+      canvas-size: 1.2.6
+      hit-canvas: 0.2.0
       svelte: 4.2.15
 
   svelte-check@3.7.0(postcss-load-config@3.1.4(postcss@8.4.38))(postcss@8.4.38)(svelte@4.2.15):

@@ -1,8 +1,7 @@
 <script lang="ts">
-	import AnimatedBg from '$lib/components/AnimatedBG.svelte';
 </script>
 
-<AnimatedBg />
+<!-- <AnimatedBg /> -->
 
 <slot />
 

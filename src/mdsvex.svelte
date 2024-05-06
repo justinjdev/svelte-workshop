@@ -1,4 +1,8 @@
 <script context="module" lang="ts">
+	/**
+	 * this file wraps the mdsvex component to provide a custom layout
+	 * any changes here would be applied to all mdsvex components
+	 */
 </script>
 
 <slot />

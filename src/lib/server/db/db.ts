@@ -2,6 +2,9 @@ import { DATABASE_PATH } from '$env/static/private';
 import Database from 'better-sqlite3';
 import type { Driver, Season } from './types';
 
+/**
+ * Wrapper implementation for the sqlite3 database.
+ */
 export default class SqliteDB {
 	private readonly db;
 

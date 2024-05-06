@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Division from '$lib/components/Division.svelte';
 	import FlowButton from '$lib/components/FlowButton.svelte';
 	import { ButtonType } from '$lib/components/types';
@@ -8,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.meta.title}</title>
+	<title>{$page.params.slug} - {data.meta.title}</title>
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
@@ -17,7 +18,7 @@
 	<article class="article-container">
 		<!-- heading -->
 		<hgroup>
-			<h1 class="title">{data.meta.title}</h1>
+			<h1 class="title">Lesson {$page.params.slug} - {data.meta.title}</h1>
 			<h3>{data.meta.description}</h3>
 		</hgroup>
 

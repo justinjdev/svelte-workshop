@@ -11,7 +11,7 @@ This workshop is intended to be as easy to approach as possible.
 
 In order to prepare, you should:
 
-1. Clone the repo! You can find it [here](https://www.github.com/justinjdev/formulasvelte). For this setup, we will just be using the `prepare` branch. Be sure to switch to the `workshop` branch before the workshop.
+1. Clone the repo! You can find it [here](https://github.com/justinjdev/svelteworkshop). For this setup, we will just be using the `prepare` branch. Be sure to switch to the `workshop` branch before the workshop.
 
 ```bash
         $ git clone -b prepare git@github.com:justinjdev/formulasvelte.git
@@ -49,4 +49,4 @@ In order to prepare, you should:
 5. If all goes well, you'll see something roughly like this:  
    ![the CLI output when installation and run is successful](/assets/screenshots/successful_install.png)
 
-6. Note: I have verified these instructions on `MacOS Definitely Some Version` as well as `Ubuntu 22.04.4 LTS`. If you still have issues, please feel free to reach out to me directly (@justinj) or ask in the [workshop slack channel](#)
+6. Note: I have verified these instructions on `MacOS` as well as `Ubuntu 22.04.4 LTS`. If you still have issues, please feel free to reach out to me directly [@justinj](#) or ask in the [workshop slack channel](#)

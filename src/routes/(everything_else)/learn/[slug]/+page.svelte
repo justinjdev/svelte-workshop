@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import AnimatedBg from '$lib/components/AnimatedBG.svelte';
 	import Division from '$lib/components/Division.svelte';
 	import FlowButton from '$lib/components/FlowButton.svelte';
 	import { ButtonType } from '$lib/components/types';
@@ -13,6 +14,8 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
+
+<AnimatedBg />
 
 <div class="page">
 	<article class="article-container">
@@ -45,13 +48,14 @@
 	}
 
 	.article-container {
-		max-inline-size: 80%;
+		max-inline-size: 90%;
 		margin-inline: auto;
 		padding: 25px;
+		margin-top: 20px;
 		background-color: rgba(0, 0, 0, 0.5);
 		border-radius: 12px;
 		color: white;
-		max-height: calc(100vh - 160px);
+		max-height: calc(100vh - 180px);
 		overflow-y: auto;
 		line-height: 2em;
 		text-wrap: wrap;

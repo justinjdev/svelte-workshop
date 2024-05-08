@@ -4,23 +4,22 @@
 	 */
 
 	export let href: string;
+	export let rel: string;
 
-	let svelte: boolean = false;
+	let svelteIcon: boolean = check(href);
 
-	function check(p: string): string {
-		if (p.match('.svelte.dev')) {
-			svelte = true;
+	function check(p: string): boolean {
+		if (p.search('svelte') !== -1) {
+			return true;
 		}
 
-		return p;
+		return false;
 	}
-
-	check(href);
 </script>
 
-<a class="smart-link" {href} target={svelte ? '_blank' : '_self'} rel={svelte ? 'noopener' : ''}>
-	{#if svelte}
-		<img src="/assets/sveltekit.png" alt="svelte logo" height="1em" />
+<a class="smart-link" {href} target={svelteIcon ? '_blank' : '_self'} {rel}>
+	{#if svelteIcon}
+		<img class="icon" src="/assets/sveltekit.png" alt="svelte logo" />
 	{/if}
 	<slot />
 </a>
@@ -29,8 +28,11 @@
 	.smart-link {
 		color: var(--zip-green);
 		text-decoration: none;
-		display: flex;
-		align-items: center;
+		text-align: center;
 		font-size: 10;
+	}
+
+	.icon {
+		height: 1em;
 	}
 </style>

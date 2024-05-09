@@ -9,7 +9,7 @@
 	let svelteIcon: boolean = check(href);
 
 	function check(p: string): boolean {
-		if (p.search('svelte') !== -1) {
+		if (p.search('svelte.dev') !== -1) {
 			return true;
 		}
 

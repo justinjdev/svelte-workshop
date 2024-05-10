@@ -26,10 +26,9 @@ More about `Svelte or React` can be found [here]().
 1. structure
 2. syntax
 3. more syntax/control flow
-4. reactivity
-5. loading
-6. hooks
-7. forms/superform
+4. loading
+5. hooks
+6. forms/superform
 
 ## Developing
 

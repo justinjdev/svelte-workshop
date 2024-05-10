@@ -28,11 +28,13 @@
 	.smart-link {
 		color: var(--zip-green);
 		text-decoration: none;
-		text-align: center;
-		font-size: 10;
+		font-size: 12;
+		display: inline-block;
+		vertical-align: middle;
 	}
 
 	.icon {
 		height: 1em;
+		vertical-align: -2px;
 	}
 </style>

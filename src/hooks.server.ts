@@ -4,11 +4,7 @@ import { redirect, type Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	// in case anybody attempts to directly access
-	if (
-		event.request.method === 'GET' &&
-		event.request.url.match(/\/learn\//) &&
-		event.request.url.endsWith('.md')
-	) {
+	if (event.request.method === 'GET' && event.request.url.match(/\/learn\/.+\.md/)) {
 		throw redirect(302, event.request.url.replace(/\.md$/, ''));
 	}
 

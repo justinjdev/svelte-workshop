@@ -3,6 +3,15 @@ import SqliteDB from '$lib/server/db/db';
 import { redirect, type Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
+	// in case anybody attempts to directly access
+	if (
+		event.request.method === 'GET' &&
+		event.request.url.match(/\/learn\//) &&
+		event.request.url.endsWith('.md')
+	) {
+		throw redirect(302, event.request.url.replace(/\.md$/, ''));
+	}
+
 	// event.locals is like request metadata - a custom object, it is built for each request and passed along
 	// it is common to store clients/users in locals
 	// I'm using it to pretend I have auth :)

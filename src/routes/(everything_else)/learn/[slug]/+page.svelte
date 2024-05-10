@@ -15,7 +15,7 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<AnimatedBg />
+<AnimatedBg imgPath="/assets/mclaren.webp" invert={true} opacity={50} width="50px" />
 
 <div class="page">
 	<article class="article-container">

@@ -13,11 +13,15 @@
 
 	// the duration of the animation
 	export let duration: number = 300;
+
+	export let width: string = '30px';
 </script>
 
 <div
 	class="bg-container"
-	style="--opacity:{opacity}%; --start:{invert ? -10 : 110}vh; --end:{invert ? 110 : -10}vh;"
+	style="--opacity:{opacity}%; --start:{invert ? -10 : 110}vh; --end:{invert
+		? 110
+		: -10}vh; --width:{width};"
 >
 	<div class="moving" style="--count:{count}; --duration:{duration}s;">
 		{#each Array.from({ length: count }) as _}
@@ -54,7 +58,7 @@
 
 	.moving > .bg-tile {
 		position: relative;
-		width: 30px;
+		width: var(--width);
 		margin: 0 calc(100vw / (var(--count) * 2.6));
 		animation: animate 15s linear infinite;
 		animation-duration: calc(var(--duration) / var(--velocity));

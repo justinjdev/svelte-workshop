@@ -23,6 +23,14 @@ More about `Svelte or React` can be found [here]().
 [] react component usage  
 [] events
 
+1. structure
+2. syntax
+3. more syntax/control flow
+4. reactivity
+5. loading
+6. hooks
+7. forms/superform
+
 ## Developing
 
 Once you've downloaded the project and installed dependencies with `pnpm install` (or `npm install` or `yarn`), start a development server:

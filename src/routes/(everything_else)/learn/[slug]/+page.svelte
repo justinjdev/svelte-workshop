@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import AnimatedBg from '$lib/components/AnimatedBG.svelte';
 	import Division from '$lib/components/Division.svelte';
 	import FlowButton from '$lib/components/FlowButton.svelte';
 	import { ButtonType } from '$lib/components/types';
@@ -15,15 +14,24 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<AnimatedBg imgPath="/assets/mclaren.webp" invert={true} opacity={50} width="50px" />
-
 <div class="page">
 	<article class="article-container">
 		<!-- heading -->
 		<hgroup>
 			<h1 class="title">Lesson {$page.params.slug} - {data.meta.title}</h1>
-			<h3>{data.meta.description}</h3>
+			<h3>{data.meta.subtitle}</h3>
 		</hgroup>
+
+		{#if data.meta.objectives.length > 0}
+			<Division />
+
+			<h2>Learning Objectives:</h2>
+			<ul>
+				{#each data.meta.objectives as objective}
+					<li>{objective}</li>
+				{/each}
+			</ul>
+		{/if}
 
 		<Division />
 

@@ -22,10 +22,11 @@ It is always good to have multiple tools in your toolbox! If you're thinking _wh
 
 This workshop is using the first-party meta-framework for Svelte - Sveltekit. If you are familiar with NextJS (for React) then many concepts will translate here in some shape. Sveltekit has excellent documentation and an online REPL that I will link to at times. Links to official Svelte documentation will appear like this with the Svelte icon: [Svelte.dev](https://www.svelte.dev).
 
-Some tech choices of note:
+Some deliberate decisions to note:
 
 - Most of the content in this workshop is written in markdown and rendered to HTML via MDsveX. Don't expect incredibly idiomatic HTML most of the time from the lesson writeups.
 - Data is coming from a sqlite database that is included with the project.
+- I'll cover the pieces of Sveltekit that I need to, but this is more about Svelte than Sveltekit.
 
 ### What should I expect to learn?
 

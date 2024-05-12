@@ -1,7 +1,5 @@
 <script lang="ts">
 	import Division from '$lib/components/Division.svelte';
-	import FlowButton from '$lib/components/FlowButton.svelte';
-	import { ButtonType } from '$lib/components/types';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -27,9 +25,6 @@
 			<svelte:component this={data.content} />
 		</div>
 	</article>
-
-	<!-- nav -->
-	<FlowButton href="/learn/{data.meta.next}" type={ButtonType.NEXT} />
 </div>
 
 <style>

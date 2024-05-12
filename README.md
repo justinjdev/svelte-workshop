@@ -20,9 +20,6 @@ More about `Svelte or React` can be found [here]().
 
 ## TODO
 
-[] react component usage  
-[] events
-
 1. structure
 2. syntax
 3. more syntax/control flow

@@ -19,6 +19,7 @@
 		text-wrap: nowrap;
 		overflow: scroll;
 		margin: auto;
+		line-height: 1.3em;
 	}
 
 	:global(.prose a) {

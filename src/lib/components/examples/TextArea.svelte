@@ -8,7 +8,7 @@
 </script>
 
 <div class="text-input">
-	<textarea {placeholder} bind:value on:click={click} />
+	<textarea {placeholder} bind:value on:click={click} on:keydown />
 </div>
 
 <style>

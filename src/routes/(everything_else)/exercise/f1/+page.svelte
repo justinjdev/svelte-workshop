@@ -13,7 +13,6 @@
 	 * This hits the api endpoint and loads the selected season
 	 */
 	async function change() {
-		console.log('onchange');
 		selectedSeason = await fetch(`/api?year=${selectedValue}`).then((r) => r.json());
 	}
 

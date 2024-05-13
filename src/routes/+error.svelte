@@ -24,7 +24,6 @@
 			{:else}
 				<img src="/assets/crash.gif" alt="Server error" />
 			{/if}
-			{page.error}
 		</section>
 	</div>
 {/if}

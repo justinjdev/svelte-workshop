@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Drivers from '$lib/components/Drivers.svelte';
+	// import Drivers from '$lib/components/Drivers.svelte';
 	import Select from '$lib/components/Select.svelte';
 	import type { Season } from '$lib/server/db/types';
 	import type { PageData } from './$types';
@@ -25,7 +25,7 @@
 	let selectedValue: number = 2021;
 </script>
 
-<Drivers drivers={data.drivers} />
+<!-- <Drivers drivers={data.drivers} /> -->
 <!-- bind:<variable>[=variableName] is the syntax for two-way data binding in props -->
 <!-- on:<eventName> is the syntax for event binding in svelte -->
 <Select options={options()} bind:selectedValue on:change={() => change()} />

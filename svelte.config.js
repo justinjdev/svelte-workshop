@@ -2,7 +2,6 @@ import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 import { escapeSvelte, mdsvex } from 'mdsvex';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import sectionize from 'remark-sectionize';
 import remarkToc from 'remark-toc';
@@ -41,7 +40,7 @@ const mdsvexOptions = {
 	 * rehypeSlug: adds an id to each header element
 	 */
 	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }], sectionize],
-	rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+	rehypePlugins: [rehypeSlug]
 };
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -1,5 +1,4 @@
 import { cookieChallenge } from '$lib/server/challenge';
-import SqliteDB from '$lib/server/db/db';
 import { redirect, type Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -28,9 +27,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	// if they're cool, they get a db
 	// this way, even if someone made it to a page they shouldn't have, they can't do anything with it
-	if (event.locals.isCool) {
-		event.locals.db = new SqliteDB();
-	}
+	// if (event.locals.isCool) {
+	// 	event.locals.db = new SqliteDB();
+	// }
 
 	return await resolve(event);
 };

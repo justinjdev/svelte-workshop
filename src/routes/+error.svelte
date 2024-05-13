@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
-	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	// If I don't do this, error updates to null and then throws before the next page is ready
 	// this breaks nav back
@@ -24,16 +24,12 @@
 			{:else}
 				<img src="/assets/crash.gif" alt="Server error" />
 			{/if}
+			{page.error}
 		</section>
 	</div>
 {/if}
 
 <style>
-	/* :global(body) {
-		background-color: #111;
-		color: lightcyan;
-	} */
-
 	.error-wrapper {
 		height: 100vh;
 		text-align: center;

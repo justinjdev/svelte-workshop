@@ -1,40 +1,91 @@
 <script lang="ts">
-	// import Drivers from '$lib/components/Drivers.svelte';
-	import Select from '$lib/components/Select.svelte';
-	import type { Season } from '$lib/server/db/types';
+	import type { Driver } from '$lib/server/db/types';
+	import { setContext } from 'svelte';
 	import type { PageData } from './$types';
+	import DriverCard from './components/DriverCard.svelte';
+	import DriverTable from './components/DriverTable.svelte';
 
 	export let data: PageData;
 
-	let selectedSeason: Season;
-
-	/**
-	 * Fired when the select element changes
-	 * This hits the api endpoint and loads the selected season
-	 */
-	async function change() {
-		selectedSeason = await fetch(`/api?year=${selectedValue}`).then((r) => r.json());
-	}
-
-	function options(): { value: number; text?: string | undefined }[] {
-		return data.options.map((o: number) => {
-			return { value: o, text: `${o}` };
+	function preprocess(drivers: Driver[]) {
+		return drivers.map((driver) => {
+			const names = driver.name.split(' ');
+			return {
+				...driver,
+				name: `${names[1].toLocaleUpperCase()} ${names[0]}`
+			};
 		});
 	}
 
-	let selectedValue: number = 2021;
+	$: drivers = preprocess(data.drivers);
+
+	setContext(
+		'teams',
+		data.teams.reduce((acc, team) => ({ ...acc, [team.id]: team }), {})
+	);
 </script>
 
-<!-- <Drivers drivers={data.drivers} /> -->
-<!-- bind:<variable>[=variableName] is the syntax for two-way data binding in props -->
-<!-- on:<eventName> is the syntax for event binding in svelte -->
-<Select options={options()} bind:selectedValue on:change={() => change()} />
+<div class="page-wrapper">
+	<div class="current">
+		<h2>Current Standings</h2>
+		<div class="current-table">
+			<DriverTable drivers={data.drivers} />
 
-<div>{selectedValue}</div>
+			<div class="drivers standings">
+				<div class="left">
+					<div class="leader">
+						<span>Current Leader</span>
+						<DriverCard driver={drivers[0]} />
+					</div>
+				</div>
+				<div class="right">
+					<div>
+						<span>2nd Place</span>
+						<DriverCard driver={drivers[1]} mini={true} />
+					</div>
+					<div>
+						<span>3rd Place</span>
+						<DriverCard driver={drivers[2]} mini={true} />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-{#if selectedSeason}
-	<span>{JSON.stringify(selectedSeason)}</span>
-{/if}
+	<img src="/assets/avatars/ver.webp" alt="avatar of ver" class="avatar" />
+</div>
 
 <style>
+	h2 {
+		grid-column: 1 / -1;
+	}
+	.page-wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		padding: 20px;
+	}
+
+	.current > h2 {
+		text-align: center;
+	}
+
+	.current {
+		border: 1px solid black;
+		padding: 10px;
+	}
+
+	.current-table {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+	}
+
+	.standings {
+		display: flex;
+	}
+
+	.left,
+	.right {
+		flex: 1;
+	}
 </style>

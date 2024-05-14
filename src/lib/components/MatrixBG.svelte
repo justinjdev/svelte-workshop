@@ -1,59 +1,76 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
+	let canvas: HTMLCanvasElement;
+	let context: CanvasRenderingContext2D | null;
 	let innerHeight: number;
 	let innerWidth: number;
-	const chairWidth = 10;
+	let img: HTMLImageElement;
 
-	$: columns = Math.floor(innerWidth / (chairWidth + 2));
-	$: rows = Math.floor(innerHeight / Math.ceil(chairWidth * 1.6875));
+	onMount(() => {
+		context = canvas.getContext('2d');
+		if (!context) {
+			throw new Error('Canvas context not found');
+		}
+		canvas.width = innerWidth;
+		canvas.height = innerHeight;
 
-	$: colors = Array.from({ length: rows }, (_, i) => `hsl(${i * 36}%, 100%, 50%)`);
+		animate(context);
+
+		img = document.createElement('img');
+		img.src = '/assets/ch.bmp';
+		img.classList.add('ch-tile');
+		img.sizes = '10px';
+	});
+
+	function animate(ctx: CanvasRenderingContext2D): void {
+		ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+		const fontSize = 10;
+		const columns = innerWidth / fontSize;
+		const elements = Array.from({ length: columns }, () => 1);
+
+		function drawImage() {
+			ctx.fillStyle = 'rgba(0, 0, 0, .1)';
+			ctx.fillRect(0, 0, innerWidth, innerHeight);
+			ctx.fillStyle = '#0f0';
+
+			for (var i = 0; i < elements.length; i++) {
+				ctx.drawImage(img, i * fontSize, elements[i] * fontSize, fontSize, fontSize * 1.6875);
+				elements[i]++;
+				if (elements[i] * fontSize > innerHeight && Math.random() > 0.95) {
+					elements[i] = 0;
+				}
+			}
+		}
+
+		const fps = 40;
+		const interval = 1000 / fps;
+		function draw(lastDraw: number): void {
+			const now = performance.now();
+			if (now - lastDraw > interval) {
+				drawImage();
+				lastDraw = now;
+			}
+			requestAnimationFrame(() => draw(lastDraw));
+		}
+
+		requestAnimationFrame(() => draw(performance.now()));
+	}
 </script>
 
-<svelte:window bind:innerWidth bind:innerHeight />
+<svelte:window bind:innerHeight bind:innerWidth />
 
-<div class="matrix-bg" style="--col:{columns};--row:{rows};--chW:{chairWidth}px;">
-	{#each Array.from({ length: columns * rows }) as _, i}
-		<img
-			src="/assets/chair_green.svg"
-			class="mtrx"
-			style="--color:{colors[i % rows]}"
-			alt="ziprecruiter logo"
-		/>
-	{/each}
-</div>
+<canvas id="matrix" bind:this={canvas}> </canvas>
 
 <style>
-	.matrix-bg {
-		display: grid;
-		grid-template-columns: repeat(var(--col), 1fr);
-		grid-template-rows: repeat(var(--row), 1fr);
-		width: 100%;
-		height: 100%;
-		background-color: black;
+	:global(body) {
+		margin: 0;
 		overflow: hidden;
+		background-color: black;
 	}
-
-	.mtrx {
-		width: var(--chW);
-		object-fit: cover;
-		opacity: 0.5;
-
-		/* opacity: 0; */
-		/* animation: matrix-animation 2s infinite; */
+	#matrix {
+		display: block;
+		background-color: black;
 	}
-	/* 
-	@keyframes matrix-animation {
-		0% {
-			opacity: 0;
-		}
-		10% {
-			opacity: 1;
-		}
-		90% {
-			opacity: 1;
-		}
-		100% {
-			opacity: 0;
-		}
-	} */
 </style>

@@ -1,6 +1,6 @@
 import { DATABASE_PATH } from '$env/static/private';
 import Database from 'better-sqlite3';
-import type { Driver, Season } from './types';
+import type { Driver, Race, Team } from './types';
 
 /**
  * Wrapper implementation for the sqlite3 database.
@@ -9,33 +9,43 @@ export default class SqliteDB {
 	private readonly db;
 
 	constructor() {
-		this.db = new Database(DATABASE_PATH, { verbose: console.log });
+		this.db = new Database(DATABASE_PATH);
 		this.db.pragma('journal_mode = WAL');
 	}
 
-	getTenDrivers(): Driver[] {
-		const stmt = this.db.prepare('SELECT * FROM drivers LIMIT 10;');
+	getAllDrivers(): Driver[] {
+		const stmt = this.db.prepare('SELECT * FROM drivers ORDER BY points DESC;');
 		const rows = stmt.all();
 		return rows as Driver[];
 	}
 
-	getSeasons(): number[] {
-		const stmt = this.db.prepare('SELECT year FROM seasons;');
+	getAllRaces(): Race[] {
+		const stmt = this.db.prepare('SELECT * FROM races;');
 		const rows = stmt.all();
-		return rows.map((season) => (season as Season).year);
+		return rows as Race[];
 	}
 
-	getSeasonByYear(year: string): Season {
-		const stmt = this.db.prepare('SELECT * FROM seasons WHERE year = ?;');
-		const row = stmt.get(year);
-		return row as Season;
+	getAllTeams(): Team[] {
+		const stmt = this.db.prepare('SELECT * FROM teams;');
+		const rows = stmt.all();
+		return rows as Team[];
 	}
 
-	getDriversByYear(year: number): Driver[] {
-		const stmt = this.db.prepare(
-			'WITH participants(driverId) as (select distinct(driverId) from results JOIN races on results.raceId = races.raceId where races.year = ?) select * from drivers JOIN participants on drivers.driverId = participants.driverId;'
-		);
-		const rows = stmt.all(year);
-		return rows as Driver[];
+	getDriverByCode(code: string): Driver {
+		const stmt = this.db.prepare('SELECT * FROM drivers WHERE code = ?;');
+		const row = stmt.get(code);
+		return row as Driver;
+	}
+
+	getPointsByDriverCode(code: string): number {
+		const stmt = this.db.prepare('SELECT sum(points) FROM results WHERE code = ?;');
+		const row = stmt.get(code);
+
+		return row as number;
+	}
+	getResultsByRaceId(raceId: number) {
+		const stmt = this.db.prepare('SELECT * FROM results WHERE raceId = ?;');
+		const rows = stmt.all(raceId);
+		return rows;
 	}
 }

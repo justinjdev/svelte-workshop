@@ -2,7 +2,8 @@ import type { PageServerLoad } from '../../learn/$types';
 
 export const load = (async ({ locals }) => {
 	return {
-		drivers: locals.db.getTenDrivers(),
-		options: locals.db.getSeasons()
+		drivers: locals.db.getAllDrivers(),
+		races: locals.db.getAllRaces(),
+		teams: locals.db.getAllTeams()
 	};
 }) satisfies PageServerLoad;

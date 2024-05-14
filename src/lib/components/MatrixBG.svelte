@@ -72,5 +72,6 @@
 	#matrix {
 		display: block;
 		background-color: black;
+		z-index: -1;
 	}
 </style>

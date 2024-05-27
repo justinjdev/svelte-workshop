@@ -17,10 +17,10 @@ This workshop is intended to be as easy to approach as possible.
 
 In order to prepare, you should:
 
-1. Clone the repo! You can find it [here](#). For this setup, we will just be using the `prepare` branch. Be sure to switch to the `workshop` branch before the workshop.
+1. Clone the repo! You can find it [here](https://github.com/justinjdev/svelte-workshop). For this setup, we will just be using the `main` branch. Be sure to switch to the `workshop` branch before the workshop!
 
 ```bash
-        $ git clone -b prepare git@github.com:justinjdev/nicetry.git
+        $ git clone https://github.com/justinjdev/svelte-workshop
 ```
 
 2. Download an IDE, if desired. I include some recommended extensions for [VS Code](https://code.visualstudio.com/download) that I like to use with Svelte in the repo - when you open the project folder, it will prompt you to install them. If you don't feel like you deserve nice things, feel free to _not_ install those. You can also use `nvim` if you choose chaos.
@@ -56,5 +56,11 @@ In order to prepare, you should:
 
 After clicking the "Let's Go!" link, you should land on this page...and this element should be working!
 <Count />
+
+## Once everything is working as expected, stop the development server and switch to the main branch before the workshop!
+
+```bash
+        $ git checkout workshop && git pull
+```
 
 6. Note: If you have any issues, please feel free to reach out to me directly [@justinj](#) or ask in the [workshop slack channel](#)

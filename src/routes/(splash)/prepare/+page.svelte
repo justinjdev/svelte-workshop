@@ -36,7 +36,7 @@
 		max-inline-size: 80%;
 		margin-inline: auto;
 		padding: 25px;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.8);
 		border-radius: 12px;
 		color: white;
 		max-height: calc(100vh - 160px);

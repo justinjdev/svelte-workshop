@@ -1,9 +1,9 @@
 <script lang="ts">
-	import AnimatedBg from '$lib/components/AnimatedBG.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import MatrixBg from '$lib/components/MatrixBG.svelte';
 </script>
 
-<AnimatedBg invert={true} />
+<MatrixBg />
 
 <slot />
 

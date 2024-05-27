@@ -6,6 +6,11 @@ next: 'preamble'
 objective:
 ---
 
+<script context="module">
+        import Count from "$lib/components/examples/Count.svelte";
+        export { Count };
+</script>
+
 ### Thank you for signing up for my Svelte/kit workshop!
 
 This workshop is intended to be as easy to approach as possible.
@@ -44,7 +49,12 @@ In order to prepare, you should:
         $ yarn run dev --open
 ```
 
-5. If all goes well, you'll see something roughly like this:  
+5. If all goes well, you'll see something roughly like this in the terminal:  
    ![the CLI output when installation and run is successful](/assets/screenshots/successful_install.png)
 
-6. Note: I have verified these instructions on `MacOS` as well as `Ubuntu 22.04.4 LTS`. If you still have issues, please feel free to reach out to me directly [@justinj](#) or ask in the [workshop slack channel](#)
+   And the browser should open to the workshop home page.
+
+After clicking the "Let's Go!" link, you should land on this page...and this element should be working!
+<Count />
+
+6. Note: If you have any issues, please feel free to reach out to me directly [@justinj](#) or ask in the [workshop slack channel](#)

@@ -61,7 +61,9 @@
 
 <svelte:window bind:innerHeight bind:innerWidth />
 
-<canvas id="matrix" bind:this={canvas}> </canvas>
+<div class="bg-container">
+	<canvas id="matrix" bind:this={canvas}> </canvas>
+</div>
 
 <style>
 	:global(body) {
@@ -69,9 +71,14 @@
 		overflow: hidden;
 		background-color: black;
 	}
+
 	#matrix {
 		display: block;
 		background-color: black;
+	}
+
+	.bg-container {
+		position: fixed;
 		z-index: -1;
 	}
 </style>

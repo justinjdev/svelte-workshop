@@ -8,6 +8,7 @@
 </script>
 
 <table>
+	<h2>Drivers:</h2>
 	<tr>
 		<th> Position </th>
 		<th> Driver </th>

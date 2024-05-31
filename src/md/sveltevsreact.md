@@ -1,6 +1,6 @@
 ---
 title: Svelte vs React
-description: Compilation! DOMs! Reactivity!
+subtitle: Compilation! DOMs! Reactivity!
 published: true
 prev:
 next:

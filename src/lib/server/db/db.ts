@@ -37,6 +37,12 @@ export default class SqliteDB {
 		return row as Driver;
 	}
 
+	getDriverById(id: number): Driver {
+		const stmt = this.db.prepare('SELECT * FROM drivers WHERE id = ?;');
+		const row = stmt.get(id);
+		return row as Driver;
+	}
+
 	getPointsByDriverCode(code: string): number {
 		const stmt = this.db.prepare('SELECT sum(points) FROM results WHERE code = ?;');
 		const row = stmt.get(code);

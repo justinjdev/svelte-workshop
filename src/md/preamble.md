@@ -26,7 +26,7 @@ Some deliberate decisions to note:
 
 - Most of the content in this workshop is written in markdown and rendered to HTML via MDsveX. Don't expect incredibly idiomatic HTML most of the time from the lesson writeups.
 - Data is coming from a sqlite database that is included with the project.
-- I'll cover the pieces of Sveltekit that I need to, but this is more about Svelte than Sveltekit.
+- I'll cover the pieces of Sveltekit that I am able to, but ~75 minutes is not a lot of time to hit every juicy tidbit.
 
 ### What should I expect to learn?
 

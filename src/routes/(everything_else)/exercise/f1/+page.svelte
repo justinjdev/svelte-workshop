@@ -29,8 +29,7 @@
 	<div class="current">
 		<h2>Current Standings</h2>
 		<div class="current-table">
-			<DriverTable drivers={data.drivers} />
-
+			<DriverTable {drivers} />
 			<ConstructorTable constructors={data.teams} />
 		</div>
 	</div>

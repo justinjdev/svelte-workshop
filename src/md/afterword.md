@@ -1,3 +1,16 @@
+---
+title: The End
+subtitle: Probably
+published: true
+prev: '04'
+---
+
+### Things I didn't cover:
+
+- Special elements (<svelte:... />)
+- Forms (and SuperForm)
+- Advanced Svelte Stores ($nav, $page, etc)
+
 ### Are there any in-depth learning resources you can recommend?
 
 - I learned Svelte/kit through [LevelUpTuts](https://levelup.video/) - and I _think_ this may be free now?

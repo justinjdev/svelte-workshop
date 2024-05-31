@@ -1,4 +1,8 @@
-<div class="division" />
+<script lang="ts">
+	export let style: string = '';
+</script>
+
+<div class="division" {style} />
 
 <style>
 	.division {

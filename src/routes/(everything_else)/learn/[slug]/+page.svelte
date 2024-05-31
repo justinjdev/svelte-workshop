@@ -3,7 +3,7 @@
 	import Division from '$lib/components/Division.svelte';
 	import FlowButton from '$lib/components/FlowButton.svelte';
 	import { ButtonType } from '$lib/components/types';
-	import type { PageData } from '../../../(splash)/prepare/$types';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
@@ -18,11 +18,14 @@
 	<article class="article-container">
 		<!-- heading -->
 		<hgroup>
-			<h1 class="title">Lesson {$page.params.slug} - {data.meta.title}</h1>
+			<h1 class="title">
+				{$page.params.slug.startsWith('0') ? 'Lesson ' + $page.params.slug + ' - ' : ''}{data.meta
+					.title}
+			</h1>
 			<h3>{data.meta.subtitle}</h3>
 		</hgroup>
 
-		{#if data.meta.objectives.length > 0}
+		{#if data.meta.objectives?.length > 0}
 			<Division />
 
 			<h2>Learning Objectives:</h2>

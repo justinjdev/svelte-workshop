@@ -7,11 +7,7 @@
 
 <div class="driver" class:mini>
 	{#if !mini}
-		<img
-			src="/assets/avatars/{driver.code.toLowerCase()}.webp"
-			alt="avatar of {driver.name}"
-			class="avatar"
-		/>
+		<img src="/assets/driver.webp" alt="avatar of {driver.name}" class="avatar" />
 	{/if}
 	<h2>{driver.name}</h2>
 	<p>{driver.points}</p>
@@ -20,7 +16,7 @@
 <style>
 	.driver {
 		text-align: center;
-		padding: 5px;
+		padding: 20px;
 		border: 2px solid var(--zip-gravitas);
 		border-radius: 4px;
 		width: 200px;

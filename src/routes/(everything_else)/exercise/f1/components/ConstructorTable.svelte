@@ -1,8 +1,9 @@
 <script lang="ts">
-	import type { Driver, Team } from '$lib/server/db/types';
+	import { goto } from '$app/navigation';
+	import type { Team } from '$lib/server/db/types';
 	import { getContext } from 'svelte';
 
-	export let drivers: Driver[];
+	export let constructors: Team[] = [];
 
 	const teams: { [key: string]: Team } = getContext('teams');
 </script>
@@ -10,42 +11,33 @@
 <table>
 	<tr>
 		<th> Position </th>
-		<th> Driver </th>
-		<th> Code </th>
 		<th> Team </th>
 		<th> Points Total </th>
 	</tr>
-	{#each drivers as driver, idx}
-		<tr class="driver">
+	{#each constructors as team, idx}
+		<tr class="constructor" on:click={() => goto(`/exercise/f1/constructor/${team.id}`)}>
 			<td>
 				{idx + 1}
 			</td>
 			<td>
-				{driver.name}
+				{team.name}
 			</td>
-			<td>
-				{driver.code}
-			</td>
-			<td>
-				{teams[driver.teamId].name}
-			</td>
-			<td>
-				{driver.points}
-			</td>
+			<td> 0 </td>
 		</tr>
 	{/each}
 </table>
 
 <style>
-	.driver {
+	.constructor {
 		background-color: lightgray;
 		padding: 10px;
 		border: 1px solid black;
 		color: black;
 	}
 
-	.driver:hover {
+	.constructor:hover {
 		background-color: darkgray;
+		cursor: pointer;
 	}
 
 	td {

@@ -2,7 +2,7 @@
 	import type { Driver } from '$lib/server/db/types';
 	import { setContext } from 'svelte';
 	import type { PageData } from './$types';
-	import DriverCard from './components/DriverCard.svelte';
+	import ConstructorTable from './components/ConstructorTable.svelte';
 	import DriverTable from './components/DriverTable.svelte';
 
 	export let data: PageData;
@@ -31,38 +31,22 @@
 		<div class="current-table">
 			<DriverTable drivers={data.drivers} />
 
-			<div class="drivers standings">
-				<div class="left">
-					<div class="leader">
-						<span>Current Leader</span>
-						<DriverCard driver={drivers[0]} />
-					</div>
-				</div>
-				<div class="right">
-					<div>
-						<span>2nd Place</span>
-						<DriverCard driver={drivers[1]} mini={true} />
-					</div>
-					<div>
-						<span>3rd Place</span>
-						<DriverCard driver={drivers[2]} mini={true} />
-					</div>
-				</div>
-			</div>
+			<ConstructorTable constructors={data.teams} />
 		</div>
 	</div>
-
-	<img src="/assets/avatars/ver.webp" alt="avatar of ver" class="avatar" />
 </div>
 
 <style>
 	h2 {
 		grid-column: 1 / -1;
 	}
+
 	.page-wrapper {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		padding: 20px;
+		width: 100%;
+		/* ABF - always be flexing */
+		display: flex;
+		justify-content: center;
 	}
 
 	.current > h2 {
@@ -70,22 +54,14 @@
 	}
 
 	.current {
-		border: 1px solid black;
+		background-color: rgba(0, 0, 0, 0.5);
 		padding: 10px;
+		width: 80vw;
 	}
 
 	.current-table {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 20px;
-	}
-
-	.standings {
-		display: flex;
-	}
-
-	.left,
-	.right {
-		flex: 1;
 	}
 </style>

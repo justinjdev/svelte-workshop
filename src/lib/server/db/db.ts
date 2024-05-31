@@ -43,9 +43,24 @@ export default class SqliteDB {
 
 		return row as number;
 	}
+
 	getResultsByRaceId(raceId: number) {
 		const stmt = this.db.prepare('SELECT * FROM results WHERE raceId = ?;');
 		const rows = stmt.all(raceId);
 		return rows;
+	}
+
+	getTeamById(id: number) {
+		const stmt = this.db.prepare('SELECT * FROM teams WHERE id = ?;');
+		const row = stmt.get(id);
+		return row as Team;
+	}
+
+	getPointsByTeamId(id: number) {
+		const stmt = this.db.prepare(
+			'SELECT SUM(r.pointsScored) AS points FROM teams t JOIN drivers d ON t.id = d.teamId JOIN results r ON d.code = r.driverCode WHERE t.id = ? GROUP BY t.name;'
+		);
+		const row = stmt.get(id);
+		return row as number;
 	}
 }

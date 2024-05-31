@@ -63,4 +63,4 @@ After clicking the "Let's Go!" link, you should land on this page...and this ele
         $ git checkout workshop && git pull
 ```
 
-6. Note: If you have any issues, please feel free to reach out to me directly [@justinj](#) or ask in the [workshop slack channel](#)
+6. Note: If you have any issues, please feel free to reach out to me directly `@justinj` or ask in the [workshop slack channel](https://ziprecruiter.slack.com/archives/C07677N2KH7)

@@ -6,6 +6,13 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+
+	function figureOutTheDamnTitle(slug: string, title: string): string {
+		return (
+			(slug.startsWith('0') && !slug.endsWith('e') ? 'Lesson ' + $page.params.slug + ' - ' : '') +
+			title
+		);
+	}
 </script>
 
 <svelte:head>
@@ -19,8 +26,7 @@
 		<!-- heading -->
 		<hgroup>
 			<h1 class="title">
-				{$page.params.slug.startsWith('0') ? 'Lesson ' + $page.params.slug + ' - ' : ''}{data.meta
-					.title}
+				{figureOutTheDamnTitle($page.params.slug, data.meta.title)}
 			</h1>
 			<h3>{data.meta.subtitle}</h3>
 		</hgroup>

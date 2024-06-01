@@ -3,7 +3,7 @@ import SqliteDB from '$lib/server/db/db';
 import { redirect, type Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	// in case anybody attempts to directly access
+	// in case anybody attempts to access the markdown files directly (which breaks, because...it just does, okay?)
 	if (event.request.method === 'GET' && event.request.url.match(/\/learn\/.+\.md/)) {
 		throw redirect(302, event.request.url.replace(/\.md$/, ''));
 	}
@@ -14,7 +14,10 @@ export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.isCool = cookieChallenge(event.cookies);
 
 	// once we figure out of they're cool, see if they're able to access the cool stuff
-	if (event.url.pathname.startsWith('/learn') || event.url.pathname.startsWith('/exercise')) {
+	if (
+		(event.url.pathname.startsWith('/learn') && !event.url.pathname.endsWith('01a')) ||
+		event.url.pathname.startsWith('/exercise')
+	) {
 		if (!event.locals.isCool) {
 			// handle proceeding after someone proves to be cool
 			let nextParam = '';

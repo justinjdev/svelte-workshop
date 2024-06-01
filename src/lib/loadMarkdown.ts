@@ -13,6 +13,7 @@ export default async function loadMarkdown(slug: string) {
 			meta: post.metadata
 		};
 	} catch (e) {
+		console.log(e);
 		throw error(404, `Could not find the requested page!`);
 	}
 }

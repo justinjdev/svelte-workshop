@@ -1,8 +1,6 @@
 <script lang="ts">
 </script>
 
-<!-- <AnimatedBg /> -->
-
 <slot />
 
 <style>

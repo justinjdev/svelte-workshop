@@ -13,7 +13,7 @@
 		<div class="kbRow">
 			{#each row.split(' ') as key}
 				<!-- event bubbling -->
-				<Key {key} on:keyClick />
+				<Key {key} />
 			{/each}
 		</div>
 	{/each}

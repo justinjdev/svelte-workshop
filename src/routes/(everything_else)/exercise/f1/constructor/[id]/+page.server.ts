@@ -1,7 +1,8 @@
+import type { Team } from '$lib/server/db/types';
 import type { PageServerLoad } from './$types';
 
-export const load = (async ({ locals, params }) => {
+export const load = (async ({ params }) => {
 	return {
-		team: { ...locals.db.getTeamById(params.id), ...locals.db.getPointsByTeamId(params.id) }
+		team: {id: params.id, name: "McLaren", base: "Woking, UK"}
 	};
 }) satisfies PageServerLoad;

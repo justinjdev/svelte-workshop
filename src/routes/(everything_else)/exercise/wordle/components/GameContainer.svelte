@@ -16,6 +16,10 @@
 
 	let clickedKey: string = '';
 
+	/**
+	 * Handle the key click event
+	 * @param e
+	 */
 	function handleClick(e: any) {
 		clickedKey = e.detail.key;
 	}
@@ -32,7 +36,7 @@
 </div>
 
 <div class="kbContainer">
-	<Keyboard on:keyClick={handleClick} />
+	<Keyboard />
 </div>
 
 <style>

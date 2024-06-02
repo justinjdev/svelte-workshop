@@ -1,6 +1,5 @@
 import { writable } from 'svelte/store';
 
-export const guessOutcomes = writable(new Map<string, GuessedLetter>());
 export const pastGuesses = writable(new Set<String>());
 
 /**

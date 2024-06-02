@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import Row from './Row.svelte';
-	import { GuessedLetter, guessOutcomes, pastGuesses } from './stores';
+	import { GuessedLetter, pastGuesses } from './stores';
 
 	export let answer: string;
 	export let rowCount: number;
@@ -121,10 +121,7 @@
 			});
 
 			// add the outcomes - this goes to the key component for highlighting
-			guessOutcomes.update((current) => {
-				current.set(guess[i], new GuessedLetter(guess[i], resArr[i]));
-				return current;
-			});
+			
 		}
 
 		// shift the active row down

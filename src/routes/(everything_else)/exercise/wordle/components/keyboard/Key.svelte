@@ -4,28 +4,25 @@
 	 */
 
 	import { createEventDispatcher } from 'svelte';
-	import { guessOutcomes, pastGuesses } from '../stores';
+	import { pastGuesses } from '../stores';
 
-	// custom dispatcher
-	const dispatch = createEventDispatcher();
+	// custom dispatcher?
 
 	export let key: string;
 
 	const keyPress = key === '↵' ? 'Enter' : key === '⌫' ? 'Backspace' : key;
 
-	// custom event dispatch
-	function clickToKeydown() {
-		dispatch('keyClick', { key: keyPress });
-	}
+	// custom event dispatch?
+	
 </script>
 
 <!-- using the class directive to dynamically style -->
+<!-- add the transposed and correct status here -->
 <button
 	class="key"
-	on:click|preventDefault={clickToKeydown}
 	class:guessed={$pastGuesses.has(keyPress)}
-	class:transposed={$guessOutcomes.get(keyPress)?.isTransposed()}
-	class:correct={$guessOutcomes.get(keyPress)?.isCorrect()}
+	class:transposed={false} 
+	class:correct={false}
 >
 	{key}
 </button>

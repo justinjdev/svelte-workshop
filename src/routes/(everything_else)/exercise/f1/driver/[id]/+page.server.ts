@@ -1,7 +1,8 @@
+import type { Driver } from '$lib/server/db/types';
 import type { PageServerLoad } from './$types';
 
-export const load = (async ({ locals, params }) => {
+export const load = (async ({ params }) => {
 	return {
-		driver: locals.db.getDriverById(params.id)
+		driver: {} as Driver
 	};
 }) satisfies PageServerLoad;

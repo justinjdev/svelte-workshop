@@ -9,7 +9,7 @@
 
 	function figureOutTheDamnTitle(slug: string, title: string): string {
 		return (
-			(slug.startsWith('0') && !slug.endsWith('e') ? 'Lesson ' + $page.params.slug + ' - ' : '') +
+			(slug.startsWith('0') && !slug.endsWith('e') ? `Lesson ${$page.params.slug} - ` : '') +
 			title
 		);
 	}
@@ -31,6 +31,7 @@
 			<h3>{data.meta.subtitle}</h3>
 		</hgroup>
 
+		<!-- optional objectives -->
 		{#if data.meta.objectives?.length > 0}
 			<Division />
 

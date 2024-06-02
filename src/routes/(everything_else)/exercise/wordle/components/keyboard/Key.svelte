@@ -1,24 +1,31 @@
 <script lang="ts">
+	/**
+	 * A given key on the on-screen keyboard, with custom event dispatching
+	 */
+
 	import { createEventDispatcher } from 'svelte';
 	import { guessOutcomes, pastGuesses } from '../stores';
 
+	// custom dispatcher
 	const dispatch = createEventDispatcher();
 
 	export let key: string;
 
 	const keyPress = key === '↵' ? 'Enter' : key === '⌫' ? 'Backspace' : key;
 
+	// custom event dispatch
 	function clickToKeydown() {
 		dispatch('keyClick', { key: keyPress });
 	}
 </script>
 
+<!-- using the class directive to dynamically style -->
 <button
 	class="key"
 	on:click|preventDefault={clickToKeydown}
 	class:guessed={$pastGuesses.has(keyPress)}
-	class:transposed={$guessOutcomes.get(keyPress) == 1}
-	class:correct={$guessOutcomes.get(keyPress) == 0}
+	class:transposed={$guessOutcomes.get(keyPress)?.isTransposed()}
+	class:correct={$guessOutcomes.get(keyPress)?.isCorrect()}
 >
 	{key}
 </button>

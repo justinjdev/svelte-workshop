@@ -21,8 +21,12 @@
 	}
 </script>
 
+<p class="rip msg-wrapper" class:hidden={answer.length <= 6}>(I'm so sorry, good luck)</p>
+
+<!-- custom event binding -->
 <Grid on:gameOver={handleGameOver} {answer} bind:clickedKey rowCount={answer.length + 1} />
 
+<!-- class: directive -->
 <div class:hidden={!isOver} class="msg-wrapper" class:won={didWin}>
 	{didWin ? 'Congratulations!' : `It was \'${answer}\'. Maybe next time :(`}
 </div>

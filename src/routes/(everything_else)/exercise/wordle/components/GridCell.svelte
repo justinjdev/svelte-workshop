@@ -1,4 +1,8 @@
 <script>
+	/**
+	 * This is the individual cell component for the grid
+	 */
+
 	export let content = '';
 	export let id = '';
 	export let correct = false;

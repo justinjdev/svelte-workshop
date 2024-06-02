@@ -7,6 +7,7 @@
 
 	export let data: PageData;
 
+	// this is unnecessary but I do it anyway
 	function preprocess(drivers: Driver[]) {
 		return drivers.map((driver) => {
 			const names = driver.name.split(' ');
@@ -19,9 +20,10 @@
 
 	$: drivers = preprocess(data.drivers);
 
+	// put the team data in the component context as a map
 	setContext(
 		'teams',
-		data.teams.reduce((acc, team) => ({ ...acc, [team.id]: team }), {})
+		data.teams.reduce((acc, team) => Object.assign(acc, { [team.id]: team }), {})
 	);
 </script>
 

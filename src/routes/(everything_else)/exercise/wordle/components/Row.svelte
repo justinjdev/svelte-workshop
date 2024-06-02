@@ -1,4 +1,8 @@
 <script lang="ts">
+	/**
+	 * This represents a given row of cells and their states after guessing
+	 */
+
 	import GridCell from './GridCell.svelte';
 
 	export let isActive = false;

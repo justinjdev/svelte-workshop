@@ -4,6 +4,8 @@ import type { Driver, Race, Team } from './types';
 
 /**
  * Wrapper implementation for the sqlite3 database.
+ *
+ * DATABASEBABY
  */
 export default class SqliteDB {
 	private readonly db;

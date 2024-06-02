@@ -1,4 +1,8 @@
 <script>
+	/**
+	 * This is the header component for the wordle game, on the main game page.
+	 */
+
 	import AnimatedBg from '$lib/components/AnimatedBG.svelte';
 	import Division from '$lib/components/Division.svelte';
 </script>

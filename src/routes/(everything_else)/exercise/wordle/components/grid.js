@@ -1,3 +1,8 @@
+/**
+ * Get a random word from the list of words. This isn't really "safe" (you'd probably want to handle this server-side), but it's good enough for this exercise.
+ *
+ * @returns a random word from the list of words
+ */
 export function getAWord() {
 	return words[Math.floor(Math.random() * words.length)];
 }

@@ -29,4 +29,9 @@
 	:global(.prose a:hover) {
 		color: var(--zip-cream);
 	}
+
+	:global(section > h1, h2, h3, h4, h5, h6) {
+    	color: var(--zip-coral);
+	}
+
 </style>

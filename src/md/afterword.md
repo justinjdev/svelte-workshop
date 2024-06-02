@@ -2,14 +2,16 @@
 title: The End
 subtitle: Probably
 published: true
-prev: '04e'
+prev: '05'
+next: 'sveltevsreact'
 ---
 
 ### Things I didn't cover:
 
 - [Special Svelte tags](https://svelte.dev/docs/special-tags)
 - [Forms](https://kit.svelte.dev/docs/form-actions) (and [SuperForm](https://superforms.rocks/))
-- Advanced Svelte Stores ([$nav](https://learn.svelte.dev/tutorial/navigating-store), [$page](https://learn.svelte.dev/tutorial/page-store), [etc](https://github.com/codediodeio/sveltefire))
+- Advanced Svelte Stores (more than nav and page... [like Sveltefire](https://github.com/codediodeio/sveltefire))
+- A11y [built-in features](https://kit.svelte.dev/docs/accessibility)
 
 ### Are there any in-depth learning resources you can recommend?
 

@@ -1,5 +1,8 @@
-<script lang="ts">
+<script>
+	import AnimatedBg from "$lib/components/AnimatedBG.svelte";
 </script>
+
+<AnimatedBg invert={true} />
 
 <slot />
 

@@ -67,4 +67,8 @@
 	h1 {
 		font-size: 3em;
 	}
+
+	:global(body) {
+		background-color: var(--zip-gravitas);
+	}
 </style>

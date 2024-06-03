@@ -3,7 +3,10 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			auth: boolean;
+			db: SqliteDB;
+		}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}

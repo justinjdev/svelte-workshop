@@ -1,12 +1,18 @@
 import { DATABASE_PATH } from '$env/static/private';
 import Database from 'better-sqlite3';
-import type { Driver, Race, Team } from './types';
+import type { Driver, Race, Result, Team } from './types';
 
 /**
  * Wrapper implementation for the sqlite3 database.
  *
  * DATABASEBABY
  */
+
+/**
+ * convenience type for a database id
+ * the prepared statement doesn't care about the type
+ */
+type Id = number | string;
 export default class SqliteDB {
 	private readonly db;
 
@@ -39,7 +45,7 @@ export default class SqliteDB {
 		return row as Driver;
 	}
 
-	getDriverById(id: number): Driver {
+	getDriverById(id: Id): Driver {
 		const stmt = this.db.prepare('SELECT * FROM drivers WHERE id = ?;');
 		const row = stmt.get(id);
 		return row as Driver;
@@ -52,19 +58,19 @@ export default class SqliteDB {
 		return row as number;
 	}
 
-	getResultsByRaceId(raceId: number) {
+	getResultsByRaceId(raceId: Id): Result[] {
 		const stmt = this.db.prepare('SELECT * FROM results WHERE raceId = ?;');
 		const rows = stmt.all(raceId);
-		return rows;
+		return rows as Result[];
 	}
 
-	getTeamById(id: number) {
+	getTeamById(id: Id): Team {
 		const stmt = this.db.prepare('SELECT * FROM teams WHERE id = ?;');
 		const row = stmt.get(id);
 		return row as Team;
 	}
 
-	getPointsByTeamId(id: number) {
+	getPointsByTeamId(id: Id): number {
 		const stmt = this.db.prepare(
 			'SELECT SUM(r.pointsScored) AS points FROM teams t JOIN drivers d ON t.id = d.teamId JOIN results r ON d.code = r.driverCode WHERE t.id = ? GROUP BY t.name;'
 		);

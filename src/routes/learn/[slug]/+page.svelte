@@ -93,4 +93,8 @@
 	hgroup {
 		text-align: center;
 	}
+
+	:global(body) {
+		background-color: var(--zip-gravitas);
+	}
 </style>

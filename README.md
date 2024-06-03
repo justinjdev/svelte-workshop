@@ -4,9 +4,7 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 
 ## Notes
 
-The data in the `db/` folder is sourced from the excellent [Ergast API](http://ergast.com/mrd/).
-
-I have modified these instructions to use `pnpm`, however `npm` works exactly the same.
+I typically use `pnpm`, however `npm` seems to work most reliably with differing environments and therefore that's what I recommend for this workshop.
 
 ## How does this site work?
 
@@ -29,13 +27,13 @@ More about `Svelte or React` can be found [here]().
 
 ## Developing
 
-Once you've downloaded the project and installed dependencies with `pnpm install` (or `npm install` or `yarn`), start a development server:
+Once you've downloaded the project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
-pnpm run dev
+npm run dev
 
 # or start the server and open the app in a new browser tab
-pnpm run dev -- --open
+npm run dev -- --open
 ```
 
 ## Building
@@ -43,7 +41,7 @@ pnpm run dev -- --open
 To create a production version of your app:
 
 ```bash
-pnpm run build
+npm run build
 ```
 
-You can preview the production build with `pnpm run preview`.
+You can preview the production build with `npm run preview`.

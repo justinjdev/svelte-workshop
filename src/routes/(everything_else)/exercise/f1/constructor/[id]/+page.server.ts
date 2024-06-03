@@ -3,6 +3,6 @@ import type { PageServerLoad } from './$types';
 
 export const load = (async ({ params }) => {
 	return {
-		team: {id: params.id, name: "McLaren", base: "Woking, UK"}
+		team: {id: params.id, name: "McLaren", base: "Woking, UK", points: 100}
 	};
 }) satisfies PageServerLoad;

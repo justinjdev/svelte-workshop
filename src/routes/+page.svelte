@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { Icon } from 'svelte-awesome';
-	import { rocket } from 'svelte-awesome/icons';
+	import { rocket, checkSquare } from 'svelte-awesome/icons';
 	import { fade, fly } from 'svelte/transition';
 
 	let ready = false;
@@ -26,6 +27,10 @@
 		<div class="hero-wrapper">
 			<h1 transition:fly={{ y: -100, duration: 500 }}>Sveltekit Workshop</h1>
 			<h2 transition:fly={{ y: 100, duration: 500 }}>Tech Week 2024</h2>
+
+			<button class="start">
+				<a href="/prepare">Let's Get Ready! <Icon data={checkSquare} /> </a>
+			</button>
 
 			<button class="start">
 				<a href="/learn/01a">Let's Go! <Icon data={rocket} /> </a>
@@ -57,6 +62,7 @@
 	a {
 		text-decoration: none;
 		color: var(--zip-green);
+		padding: 10px;
 	}
 
 	a:hover {

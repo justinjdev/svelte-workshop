@@ -2,6 +2,22 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte). This project is using `Svelte 4`.
 
+# Instructions
+
+You need `Node >=18.18` in order for things to run correctly.
+
+```bash
+        # omit the --open if you don't want it to open a browser window for you!
+        $ npm install
+        $ npm run dev --open
+```
+
+If all goes well, you'll see something roughly like this in the terminal:  
+   ![the CLI output when installation and run is successful](/assets/successful_install.png)
+
+   And the browser should open to the workshop home page.
+
+
 ## Notes
 
 I typically use `pnpm`, however `npm` seems to work most reliably with differing environments and therefore that's what I recommend for this workshop.
@@ -13,17 +29,6 @@ The project is powered by `SvelteKit` and was generated via `create-svelte`. The
 The tutorial pages are all markdown files compiled to html with [MDsveX](https://github.com/pngwn/MDsveX) (and some plugins) and [Shiki](https://shiki.matsu.io/) for syntax highlighting. These pages are lazy loaded at request time via a dynamic route and simple `await import('path/to/file.md)` loading. `MDsveX` and `Shiki` configuration is done in [svelte.config.js](./svelte.config.js) in case you want to borrow it for your own project 🔥.
 
 Minimal HTML and CSS knowledge is needed to get a simple website like this up and running. You can learn everything you need via Google searches, Youtube and GitHub Copilot.
-
-More about `Svelte or React` can be found [here]().
-
-## TODO
-
-1. structure
-2. syntax
-3. more syntax/control flow
-4. loading
-5. hooks
-6. forms/superform
 
 ## Developing
 

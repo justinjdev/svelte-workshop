@@ -12,12 +12,6 @@ You need `Node >=18.18` in order for things to run correctly.
         $ npm run dev --open
 ```
 
-If all goes well, you'll see something roughly like this in the terminal:  
-   ![the CLI output when installation and run is successful](/assets/successful_install.png)
-
-   And the browser should open to the workshop home page.
-
-
 ## Notes
 
 I typically use `pnpm`, however `npm` seems to work most reliably with differing environments and therefore that's what I recommend for this workshop.
